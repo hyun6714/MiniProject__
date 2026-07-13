@@ -48,7 +48,7 @@ public class MonsterSpawn : MonoBehaviour
             randommon = Random.Range(0, enemyPrefaps.Length);
 
             Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
-            spawnCount++;
+            spawnCount++;//초기화 할 방법찾기
         }
         else
         {

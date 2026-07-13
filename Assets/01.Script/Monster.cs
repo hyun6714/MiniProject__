@@ -59,7 +59,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void SetNewTarget() //보완필요 지금 한 곳으로 몰아버림 
+    void SetNewTarget() //보완필요 지금 한 곳으로 몰아버림 1. 스테이지가 다른데 지정방향을 정하면 똑같은 현상이 생김 2. 즉 자유 방향으로 이동을 해야하는데 이걸 어케 해야할지 고민필요 
     {
         randomX = Random.Range(-9f, 9f);
         randomY = Random.Range(-8.5f, 5f);
