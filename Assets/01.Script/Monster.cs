@@ -28,6 +28,7 @@ public class Monster : MonoBehaviour
         speed = 3f;
 
         confinedTime = 5f;
+        SetNewTarget();
     }
 
     void Update()
@@ -59,11 +60,10 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void SetNewTarget() //보완필요 지금 한 곳으로 몰아버림 1. 스테이지가 다른데 지정방향을 정하면 똑같은 현상이 생김 2. 즉 자유 방향으로 이동을 해야하는데 이걸 어케 해야할지 고민필요 
+    void SetNewTarget() 
     {
         randomX = Random.Range(-9f, 9f);
-        randomY = Random.Range(-8.5f, 5f);
-        targetP = new Vector3(randomX, randomY, 0);
+        targetP = new Vector3(randomX, transform.position.y, 0);
     }
 
     void Move()
@@ -71,7 +71,7 @@ public class Monster : MonoBehaviour
         mstate = MonsterState.Move;
         transform.position = Vector3.MoveTowards(transform.position, targetP, speed*Time.deltaTime);
 
-        if(Vector3.Distance(transform.position, targetP) < 0.5f)
+        if(Mathf.Abs(transform.position.x-targetP.x) < 0.5f)
         {
             SetNewTarget();
         }
