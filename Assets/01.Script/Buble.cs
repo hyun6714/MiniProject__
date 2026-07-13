@@ -24,4 +24,6 @@ public class Buble : MonoBehaviour
         }
     }
 
+    //버블 소환시 y축으로 위로 이동 x축으로 조금 이동후 + 일정시간후 비활성화 
+
 }

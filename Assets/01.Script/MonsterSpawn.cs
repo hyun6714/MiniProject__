@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class MosterSpawn : MonoBehaviour
+public class MonsterSpawn : MonoBehaviour
 {
 
-    public static MosterSpawn instance;
+    public static MonsterSpawn instance;
 
     float MinX;
     float MinY;

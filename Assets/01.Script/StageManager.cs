@@ -60,7 +60,7 @@ public class StageManager : MonoBehaviour
             cStage++;
             BackGoundChage();
             SpawnStage(cStage);
-            MosterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
+            MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
         }
     }
 
@@ -74,7 +74,7 @@ public class StageManager : MonoBehaviour
         SpawnStage(cStage);
         Time.timeScale = 1;
         UIManager.instance.StageFClose();
-        MosterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
+        MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
     }
 
     public void BackGoundChage() //µÞ¹è°æ º¯°æ 

@@ -14,8 +14,8 @@ public class Monster : MonoBehaviour
 
     float score;
     float speed;
-    float randomX = Random.Range(-9f,9f);
-    float randomY = Random.Range(-8.5f ,5f);
+    float randomX;
+    float randomY;
 
     float confinedTime;
     float timer;
@@ -61,6 +61,8 @@ public class Monster : MonoBehaviour
 
     void SetNewTarget()
     {
+        randomX = Random.Range(-9f, 9f);
+        randomY = Random.Range(-8.5f, 5f);
         targetP = new Vector3(randomX, randomY, 0);
     }
 
