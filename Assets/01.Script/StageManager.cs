@@ -55,9 +55,9 @@ public class StageManager : MonoBehaviour
 
     public void NextStage()
     {
+        cStage++;
         if (cStage < stagePrefabs.Length)
         {
-            cStage++;
             BackGoundChage();
             SpawnStage(cStage);
             MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
