@@ -59,7 +59,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void SetNewTarget()
+    void SetNewTarget() //보완필요 지금 한 곳으로 몰아버림 
     {
         randomX = Random.Range(-9f, 9f);
         randomY = Random.Range(-8.5f, 5f);

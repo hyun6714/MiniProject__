@@ -1452,7 +1452,7 @@ MonoBehaviour:
   - {fileID: 1476317420}
   - {fileID: 1070749799}
   - {fileID: 1154421856}
-  cStage: 0
+  cStage: 3
   backGrounA: {fileID: 1030067294}
   backGrounB: {fileID: 1389796064}
   backGrounC: {fileID: 1450613198}
@@ -5009,6 +5009,7 @@ SceneRoots:
   - {fileID: 1389145737}
   - {fileID: 732520209}
   - {fileID: 183611188}
+  - {fileID: 2094033780}
   - {fileID: 1591890374}
   - {fileID: 667800262}
   - {fileID: 885984294}
@@ -5021,4 +5022,3 @@ SceneRoots:
   - {fileID: 1318653525}
   - {fileID: 350704480}
   - {fileID: 882795192}
-  - {fileID: 2094033780}

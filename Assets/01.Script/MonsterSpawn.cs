@@ -41,7 +41,7 @@ public class MonsterSpawn : MonoBehaviour
 
     void SummonEnemy()
     {
-        if(spawnCount < spawnMax)
+        if(spawnCount < spawnMax) //고쳐야함 몬스터 5마리 까지만 소환하기로 
         {
             float x = Random.Range(MinX, MaxX);
             float y = Random.Range(MinY, MaxY);
