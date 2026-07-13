@@ -28,4 +28,11 @@ public class ItemScore : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    
+    // º¸¼® ºí·ç 1000Á¡
+    // ³ë¶û 2000
+    // ÇÏ´Ã 3000
+    // ¿¬µÎ 5000
+    // »¡°­ 10000
 }
