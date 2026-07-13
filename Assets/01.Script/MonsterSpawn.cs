@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MonsterSpawn : MonoBehaviour
 {
@@ -9,8 +10,12 @@ public class MonsterSpawn : MonoBehaviour
     float MinY;
     float MaxX;
     float MaxY;
+    float randomX;
+    float randomY;
+
 
     [SerializeField] private GameObject[] enemyPrefaps;
+    public List<GameObject> monPool = new List<GameObject>();
 
     int spawnCount;
     int spawnMax;
@@ -41,14 +46,27 @@ public class MonsterSpawn : MonoBehaviour
 
     void SummonEnemy()
     {
-        if(spawnCount < spawnMax) //고쳐야함 몬스터 5마리 까지만 소환하기로 
-        {
-            float x = Random.Range(MinX, MaxX);
-            float y = Random.Range(MinY, MaxY);
-            randommon = Random.Range(0, enemyPrefaps.Length);
+        randomX = Random.Range(-9f, 9f);
+        randomY = Random.Range(-8.5f, 5f);
 
-            Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
-            spawnCount++;//초기화 할 방법찾기
+        GameObject mons = monPool.Find(m => !m.activeInHierarchy);
+   
+        if(spawnCount < spawnMax)
+        {
+            if (mons != null)
+            {
+                mons.transform.position = new Vector3(randomX, randomY, 0);
+                mons.SetActive(true);
+            }
+            else
+            {
+                float x = Random.Range(MinX, MaxX);
+                float y = Random.Range(MinY, MaxY);
+                randommon = Random.Range(0, enemyPrefaps.Length);
+
+                Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
+                spawnCount++;
+            }
         }
         else
         {
