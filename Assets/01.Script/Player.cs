@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기 
 {
     Vector2 dir;
 
