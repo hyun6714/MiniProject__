@@ -85,7 +85,5 @@ public class MonsterSpawn : MonoBehaviour
         {
             monster.gameObject.SetActive(false);
         }
-
-        spawnCount = 0;
     }
 }
