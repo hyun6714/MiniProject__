@@ -101,6 +101,10 @@ public class Monster : MonoBehaviour
     void MonDie()
     {
         mstate = MonsterState.Die;
+        if(UIManager.instance != null)
+        {
+            UIManager.instance.GetScore(1000);
+        }
         gameObject.SetActive(false);
         //º¸¼® ¶³±¸±â 
     }

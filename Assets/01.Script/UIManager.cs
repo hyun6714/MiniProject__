@@ -9,12 +9,12 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
 
     [SerializeField] TextMeshProUGUI scoreText;
+    int totalScore;
 
     [SerializeField] GameObject gameOverPop;
     [SerializeField] GameObject reStagePop;
     [SerializeField] TextMeshProUGUI heartloosText;
     [SerializeField] TextMeshProUGUI heartReGamePopText;
-    float score;
 
     private void Awake()
     {
@@ -27,18 +27,17 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        score = 0;
+        totalScore = 0;
         scoreText.text = "score : ";
     }
 
-    public void GetScore()
+    public void GetScore(int sc)
     {
-
-        score++;//변경 해야함 
-        scoreText.text = $"now score {score}";
+        totalScore += sc;
+        scoreText.text = $"now score {totalScore}";
     }
 
-    public void ReGameHeartPop() //왜있는거지?
+    public void ReGameHeartPop()
     {
         int hearts = GameManager.instance.heart;
         heartReGamePopText.text = $" ♥  x {hearts}";
