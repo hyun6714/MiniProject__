@@ -13,6 +13,15 @@ public class Monster : MonoBehaviour
      MonsterState mstate;
 
     float score;
+    float speed;
+    float randomX = Random.Range(-9f,9f);
+    float randomY = Random.Range(-8.5f ,5f);
+
+    float confinedTime;
+    float timer;
+
+    Vector3 targetP;
+
     // 만들어야 하는거 몬스터 랜덤위치 스폰(5마리 정도)(스포너 오브젝트 따로 만들고 프리팹등록)
     // 만약 닿은 물체가 플레이어 라면 게임펄 상태로 돌리기
     // 죽었을 때 점수 증가 
@@ -21,6 +30,25 @@ public class Monster : MonoBehaviour
     void Start()
     {
         mstate = MonsterState.Move;
+        speed = 3f;
+
+        confinedTime = 5f;
+    }
+
+    void Update()
+    {
+        switch (mstate)
+        {
+            case MonsterState.Move:
+                Move(); 
+                break;
+
+            case MonsterState.Confined:
+                timer += Time.deltaTime;
+                BubleRelease();
+                break;
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,10 +64,38 @@ public class Monster : MonoBehaviour
         }
     }
 
+    void SetNewTarget()
+    {
+        targetP = new Vector3(randomX, randomY, 0);
+    }
+
+    void Move()
+    {
+        mstate = MonsterState.Move;
+        transform.position = Vector3.MoveTowards(transform.position, targetP, speed*Time.deltaTime);
+
+        if(Vector3.Distance(transform.position, targetP) < 0.5f)
+        {
+            SetNewTarget();
+        }
+    }
+
     void BubleConfined()
     {
         mstate = MonsterState.Confined;
+        timer = 0;
         //구속상태 애니메이션 추가 
+    }
+
+    void BubleRelease()
+    {
+        if(confinedTime <= timer)
+        {
+            mstate = MonsterState.Move;
+
+            SetNewTarget();
+            Move();
+        }
     }
 
     void MonDie()
