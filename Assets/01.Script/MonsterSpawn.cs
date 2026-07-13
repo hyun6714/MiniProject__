@@ -43,7 +43,8 @@ public class MonsterSpawn : MonoBehaviour
 
     void SummonEnemy()
     {
-
+        float x = Random.Range(MinX, MaxX);
+        float y = Random.Range(MinY, MaxY);
         GameObject mons = monPool.Find(m => !m.activeInHierarchy);
    
         if(spawnCount < spawnMax)
