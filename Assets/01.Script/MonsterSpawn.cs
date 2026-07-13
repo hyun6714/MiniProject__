@@ -67,9 +67,8 @@ public class MonsterSpawn : MonoBehaviour
                 GameObject newMon = Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
 
                 monPool.Add(newMon);
-
-                spawnCount++;
             }
+            spawnCount++;
         }
         else
         {
@@ -85,5 +84,6 @@ public class MonsterSpawn : MonoBehaviour
         {
             monster.gameObject.SetActive(false);
         }
+        spawnCount = 0;
     }
 }
