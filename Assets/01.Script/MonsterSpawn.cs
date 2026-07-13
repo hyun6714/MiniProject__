@@ -64,7 +64,10 @@ public class MonsterSpawn : MonoBehaviour
                 float y = Random.Range(MinY, MaxY);
                 randommon = Random.Range(0, enemyPrefaps.Length);
 
-                Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
+                GameObject newMon = Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
+
+                monPool.Add(newMon);
+
                 spawnCount++;
             }
         }
