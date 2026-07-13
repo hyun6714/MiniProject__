@@ -10,9 +10,6 @@ public class MonsterSpawn : MonoBehaviour
     float MinY;
     float MaxX;
     float MaxY;
-    float randomX;
-    float randomY;
-
 
     [SerializeField] private GameObject[] enemyPrefaps;
     public List<GameObject> monPool = new List<GameObject>();
@@ -46,28 +43,13 @@ public class MonsterSpawn : MonoBehaviour
 
     void SummonEnemy()
     {
-        randomX = Random.Range(-9f, 9f);
-        randomY = Random.Range(-8.5f, 5f);
 
         GameObject mons = monPool.Find(m => !m.activeInHierarchy);
    
         if(spawnCount < spawnMax)
         {
-            if (mons != null)
-            {
-                mons.transform.position = new Vector3(randomX, randomY, 0);
-                mons.SetActive(true);
-            }
-            else
-            {
-                float x = Random.Range(MinX, MaxX);
-                float y = Random.Range(MinY, MaxY);
-                randommon = Random.Range(0, enemyPrefaps.Length);
-
-                GameObject newMon = Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
-
-                monPool.Add(newMon);
-            }
+            randommon = Random.Range(0, enemyPrefaps.Length);
+            GameObject newMon = Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
             spawnCount++;
         }
         else
@@ -82,7 +64,7 @@ public class MonsterSpawn : MonoBehaviour
         Monster[] mon = FindObjectsByType<Monster>(FindObjectsSortMode.None);
         foreach (Monster monster in mon)
         {
-            monster.gameObject.SetActive(false);
+            Destroy(monster.gameObject);
         }
         spawnCount = 0;
     }
