@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class TeleportManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TeleporPo[] teleportList;
 
-    // Update is called once per frame
-    void Update()
+    public void TeleporObject(int currenHoleID, GameObject obj)
     {
-        
+        foreach(var pair in teleportList)
+        {
+            if(pair.holeID == currenHoleID)
+            {
+                obj.transform.position = pair.exitP.position;
+                return;
+            }
+        }
     }
 }

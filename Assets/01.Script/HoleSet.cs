@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class HoleSet : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int myHoleId;
+    public TeleportManager manager;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        manager.TeleporObject(myHoleId, collision.gameObject);
     }
 }
