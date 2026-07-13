@@ -59,9 +59,12 @@ public class MonsterSpawn : MonoBehaviour
     public void StopSpawning()
     {
         CancelInvoke("SummonEnemy");
-        foreach(GameObject obj in enemyPrefaps)
+        Monster[] mon = FindObjectsByType<Monster>(FindObjectsSortMode.None);
+        foreach (Monster monster in mon)
         {
-            obj.SetActive(false);
+            monster.gameObject.SetActive(false);
         }
+
+        spawnCount = 0;
     }
 }
