@@ -24,4 +24,4 @@ public class TeleportManager : MonoBehaviour
     }
 }
 
-//유니티에 배치 필요 
+//+ 스테이지마다 끄고 키기
