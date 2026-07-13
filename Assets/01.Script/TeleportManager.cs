@@ -3,8 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public struct TeleporPo
 {
-    public Transform exitP;
-    public int holeID;
+    public Transform exitP;//À§
+    public int holeID;//¾Æ·¡
 }
 
 public class TeleportManager : MonoBehaviour
