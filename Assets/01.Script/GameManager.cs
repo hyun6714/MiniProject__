@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
         gameState = GameState.StageFail;
         Time.timeScale = 0;
 
+        MosterSpawn.instance.StopSpawning();
+
         heart--;
         UIManager.instance.HeartLoss();
         UIManager.instance.StageF(); 
@@ -63,18 +65,21 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.GameOver;
         Time.timeScale = 0;
+        MosterSpawn.instance.StopSpawning();
         UIManager.instance.GameOverPop();
     }
 
     public void GameClear()
     {
         gameState = GameState.GameClear;
+        MosterSpawn.instance.StopSpawning();
         //게임클리어시 최종점수+ 메인 화면 가는 버튼 생성 
     }
 
     public void StageClear()
     {
         gameState = GameState.StageClear;
+        MosterSpawn.instance.StopSpawning();
         //여기에 스테이지 클리어 시 나오는 UI추가 필요 
     }
 
