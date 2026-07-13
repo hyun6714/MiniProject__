@@ -27,5 +27,5 @@ public class BubleManager : MonoBehaviour
     }
 
     //버블 소환시 y축으로 위로 이동 x축으로 조금 이동후 + 일정시간후 비활성화 
-
+    //소환하는 것과 소환시 하는 행동 분리 
 }
