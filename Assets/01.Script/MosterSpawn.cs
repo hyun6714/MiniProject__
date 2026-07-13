@@ -32,10 +32,10 @@ public class MosterSpawn : MonoBehaviour
         spawnMax = 5;
         randommon = Random.Range(0, enemyPrefaps.Length);
 
-        MinX = -4;
-        MinY = -4;
-        MaxX = 4;
-        MaxY = 4;
+        MinX = -9;
+        MinY = -8.5f;
+        MaxX = 9;
+        MaxY = 5;
 
         InvokeRepeating("SummonEnemy", 1f, 1f);
     }
