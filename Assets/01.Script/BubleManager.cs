@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class Buble : MonoBehaviour
+public class BubleManager : MonoBehaviour
 {
-    [SerializeField] GameObject buble;
+    [SerializeField] GameObject Buble;
 
+    int bublemax;
     float attackDmg;
 
     public void Start()
     {
+        bublemax = 10;
         attackDmg = 10;
     }
 
