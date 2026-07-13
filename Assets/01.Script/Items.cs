@@ -3,14 +3,12 @@ using UnityEngine;
 public class Items : MonoBehaviour
 {
     [SerializeField] GameObject[] items;
-    [SerializeField] int itemScore; // 각각 다른 점수들 만들기 
 
     int itemMax;
     int itemtatal;
 
     int random;
     float itemtimer;
-    float itemLifetime;
 
     //1. 아이템== 보석 점수 정하기 
     //2. 맵에서 랜덤으로 생성 및 닿을 시 점수 증가 
@@ -21,16 +19,10 @@ public class Items : MonoBehaviour
     {
         itemMax = 5;
         itemtatal = 0;
-        itemLifetime = 10f;
         itemtimer = 20f;
 
         InvokeRepeating("SummonEnemy", 1f, itemtimer);
 
-    }
-
-    private void Update()
-    {
-        ItemDeactivation();
     }
 
     void SpawnItem()
@@ -52,13 +44,4 @@ public class Items : MonoBehaviour
         }
     }
 
-
-    void ItemDeactivation()
-    {
-        itemLifetime -= Time.deltaTime;
-        if(itemLifetime == 0)
-        {
-            gameObject.SetActive(false);
-        }
-    }
 }
