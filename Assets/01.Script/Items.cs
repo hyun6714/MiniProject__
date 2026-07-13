@@ -10,18 +10,13 @@ public class Items : MonoBehaviour
     int random;
     float itemtimer;
 
-    //1. 아이템== 보석 점수 정하기 
-    //2. 맵에서 랜덤으로 생성 및 닿을 시 점수 증가 
-    //3. 일정 시간 지나면 비활성화 
-    //4. 어떻게 구현을 할까 고민 프리팹마다 점수 따로 정하기 
-
     private void Start()
     {
         itemMax = 5;
         itemtatal = 0;
         itemtimer = 20f;
 
-        InvokeRepeating("SummonEnemy", 1f, itemtimer);
+        InvokeRepeating("SpawnItem", 1f, itemtimer);//이거 스테이지 시작하고 소환하기+ 플레이어 충돌시 추가 필요
 
     }
 
