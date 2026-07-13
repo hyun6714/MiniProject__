@@ -2,12 +2,24 @@ using UnityEngine;
 
 public class MosterSpawn : MonoBehaviour
 {
+
+    public static MosterSpawn instance;
+
     float MinX;
     float MinY;
     float MaxX;
     float MaxY;
 
     [SerializeField] private GameObject enemyPrefap;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
