@@ -12,8 +12,6 @@ public class Items : MonoBehaviour
     float itemtimer;
     float itemLifetime;
 
-    float randomX = Random.Range(-9f, 9f);
-    float randomY = Random.Range(-8.5f, 5f);
     //1. 아이템== 보석 점수 정하기 
     //2. 맵에서 랜덤으로 생성 및 닿을 시 점수 증가 
     //3. 일정 시간 지나면 비활성화 
@@ -26,17 +24,27 @@ public class Items : MonoBehaviour
         itemLifetime = 10f;
         itemtimer = 20f;
 
-        random = Random.Range(0, items.Length);
-
         InvokeRepeating("SummonEnemy", 1f, itemtimer);
+
+    }
+
+    private void Update()
+    {
         ItemDeactivation();
     }
 
     void SpawnItem()
     {
-        if(itemtatal < itemMax)
+        float randomX = Random.Range(-9f, 9f);
+        float randomY = Random.Range(-8.5f, 5f);
+
+        if (itemtatal < itemMax)
         {
-            Instantiate(items[random], new Vector3(randomX, randomY, 0), Quaternion.identity);
+            Vector3 spawnP = new Vector3(randomX, randomY, 0);
+            random = Random.Range(0, items.Length);
+
+            Instantiate(items[random], spawnP, Quaternion.identity);
+            itemtatal++;
         }
         else
         {

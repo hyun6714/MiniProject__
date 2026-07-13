@@ -30,7 +30,6 @@ public class MosterSpawn : MonoBehaviour
     {
         spawnCount = 0;
         spawnMax = 5;
-        randommon = Random.Range(0, enemyPrefaps.Length);
 
         MinX = -9;
         MinY = -8.5f;
@@ -46,6 +45,7 @@ public class MosterSpawn : MonoBehaviour
         {
             float x = Random.Range(MinX, MaxX);
             float y = Random.Range(MinY, MaxY);
+            randommon = Random.Range(0, enemyPrefaps.Length);
 
             Instantiate(enemyPrefaps[randommon], new Vector3(x, y, 0), Quaternion.identity);
             spawnCount++;
