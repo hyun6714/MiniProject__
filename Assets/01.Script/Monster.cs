@@ -55,14 +55,11 @@ public class Monster : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && mstate == MonsterState.Confined)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             if(mstate == MonsterState.Confined)
             {
-                if(timer > 0.2f)
-                {
-                    MonDie();
-                }
+                MonDie();
             }
             else if(mstate == MonsterState.Move)
             {
