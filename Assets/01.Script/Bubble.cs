@@ -15,7 +15,7 @@ public class Bubble : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //벽과 충돌 무시하는 것 고쳐야함 
     {
         transform.position += Vector3.up * bubbleSpeed * Time.deltaTime;
 
@@ -39,6 +39,9 @@ public class Bubble : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Monster"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

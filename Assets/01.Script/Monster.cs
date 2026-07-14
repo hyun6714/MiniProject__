@@ -54,9 +54,12 @@ public class Monster : MonoBehaviour
             BubbleConfined();
         }
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && mstate == MonsterState.Confined)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            MonDie();
+            if(mstate == MonsterState.Confined )
+            {
+                MonDie();
+            }
         }
     }
 
@@ -70,7 +73,7 @@ public class Monster : MonoBehaviour
     {
         mstate = MonsterState.Move;
         transform.position = Vector3.MoveTowards(transform.position, targetP, speed*Time.deltaTime);
-
+        speed = 3f;
         if(Mathf.Abs(transform.position.x-targetP.x) < 0.5f)
         {
             SetNewTarget();
@@ -80,6 +83,7 @@ public class Monster : MonoBehaviour
     void BubbleConfined()
     {
         mstate = MonsterState.Confined;
+        speed = 0;
         timer = 0;
         //구속상태 애니메이션 추가 
     }
