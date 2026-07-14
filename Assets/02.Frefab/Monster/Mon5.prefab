@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3468248498860874482}
   m_Layer: 10
   m_Name: Mon5
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95dfef155b3fe46459ca4fbe3f128036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Monster
+  mstate: 0
 --- !u!61 &3141241959299247419
 BoxCollider2D:
   m_ObjectHideFlags: 0
