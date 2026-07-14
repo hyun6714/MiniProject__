@@ -29,7 +29,14 @@ public class ItemScore : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            GetScoreItem();
+        }
+    }
+
     // º¸¼® ºí·ç 1000Á¡
     // ³ë¶û 2000
     // ÇÏ´Ã 3000

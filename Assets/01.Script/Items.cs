@@ -38,5 +38,4 @@ public class Items : MonoBehaviour
             CancelInvoke("SpawnItem");
         }
     }
-
 }

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
 
         moveSpeed = 3f;
 
-        jumpPower = 5f;
+        jumpPower = 8f;
         jumpCount = 0;
         jumpMax = 1;
     }
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) // 구속상태가 되어도 몬스터가 닿을 시 사망함 
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Monster"))
         {

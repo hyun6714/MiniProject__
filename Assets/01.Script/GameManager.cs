@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StageFail()
+    public void StageFail()//점수 초기화하는데 그스테이지에 얻은 점수 초기화 + 버블 삭제 
     {
         gameState = GameState.StageFail;
         Time.timeScale = 0;
