@@ -109,7 +109,7 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void MonDie()
+    public void MonDie()
     {
         mstate = MonsterState.Die;
         if(UIManager.instance != null)
