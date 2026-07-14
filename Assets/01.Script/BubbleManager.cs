@@ -8,20 +8,9 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] private GameObject[] bubblePool;
     [SerializeField] private int poolSize;
 
-    float bubbleLifetime;
-    float bubbleSpeed;
-
-    float attackDmg;
-
-    public void Start()
+    void Start()
     {
         poolSize = 10;
-
-        bubbleLifetime = 10f;
-        bubbleSpeed = 2f;
-
-        attackDmg = 10;
-
         bubblePool = new GameObject[poolSize];
         for(int i=0; i<poolSize; i++)
         {
@@ -30,12 +19,12 @@ public class BubbleManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
-        transform.position += Vector3.up * bubbleSpeed * Time.deltaTime;
+        BubleSummon();  
     }
 
-    void BubleSummon()
+    public void BubleSummon()
     {
         if(Keyboard.current.enterKey.wasPressedThisFrame)
         {
