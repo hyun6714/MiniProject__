@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] private Transform target;
 
     private void LateUpdate()
     {

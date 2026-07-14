@@ -11,10 +11,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     int totalScore;
 
-    [SerializeField] GameObject gameOverPop;
-    [SerializeField] GameObject reStagePop;
-    [SerializeField] TextMeshProUGUI heartloosText;
-    [SerializeField] TextMeshProUGUI heartReGamePopText;
+    [SerializeField] private GameObject gameOverPop;
+    [SerializeField] private GameObject reStagePop;
+    [SerializeField] private TextMeshProUGUI heartloosText;
+    [SerializeField] private TextMeshProUGUI heartReGamePopText;
 
     private void Awake()
     {

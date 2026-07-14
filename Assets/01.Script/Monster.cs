@@ -107,6 +107,7 @@ public class Monster : MonoBehaviour
             UIManager.instance.GetScore(1000);
         }
         gameObject.SetActive(false);
+        GameManager.instance.CheckClear();
     }
 
 }

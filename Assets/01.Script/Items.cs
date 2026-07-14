@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    [SerializeField] GameObject[] items;
+    [SerializeField] private GameObject[] items;
 
     int itemMax;
     int itemtatal;

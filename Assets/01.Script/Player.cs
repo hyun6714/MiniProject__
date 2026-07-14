@@ -10,10 +10,10 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
     int jumpCount;
     int jumpMax;
 
-    [SerializeField] LayerMask ground;
-    [SerializeField] LayerMask pground;
-    [SerializeField] LayerMask monster;
-    [SerializeField] LayerMask buble;
+    [SerializeField] private LayerMask ground;
+    [SerializeField] private LayerMask pground;
+    [SerializeField] private LayerMask monster;
+    [SerializeField] private LayerMask buble;
 
 
     Rigidbody2D rb;
@@ -94,10 +94,3 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
         GameManager.instance.StageFail();
     }
 }
-
-
-
-
-//이제 몬스터&플레이어가 구멍에 빠질 때 다른 맵위쪽 구멍에 텔포
-//단 방법 1. 하나씩 텔포위치를 만들고 거기로 이동하게 하기 or 2.위치를 배열에 저장을 하고 만약 몇번배열 위치에서 떨어졌을 때 어떤 위치로 텔포하기
-//배열에 저장할 떄 나 하나씩 만들 땐 위 아래 구분

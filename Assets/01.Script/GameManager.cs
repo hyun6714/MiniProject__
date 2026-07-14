@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Linq;
 enum GameState
 {
     StageClear, StageFail, GameOver, GameClear
@@ -78,6 +79,16 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.StageClear;
         MonsterSpawn.instance.StopSpawning();
+    }
+
+    public void CheckClear()
+    {
+        GameObject[] allmon = GameObject.FindGameObjectsWithTag("Monster");
+        if(allmon.Count(m => m.activeInHierarchy) == 0)
+        {
+            StageClear();
+            StageManager.instance.StageClear();
+        }
     }
 
     public void TimeUp()

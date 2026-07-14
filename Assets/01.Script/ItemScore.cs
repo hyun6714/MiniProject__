@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemScore : MonoBehaviour
 {
-    [SerializeField] int itemScore;
+    [SerializeField] private int itemScore;
     float itemLifetime;
 
     private void Start()
