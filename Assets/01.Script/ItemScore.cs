@@ -34,6 +34,7 @@ public class ItemScore : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             GetScoreItem();
+            gameObject.SetActive(false);
         }
     }
 
