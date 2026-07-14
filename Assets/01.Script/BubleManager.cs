@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BubleManager : MonoBehaviour
 {
-    [SerializeField] GameObject Buble;
+    [SerializeField] GameObject BublePrefab;
 
     int bublemax;
     float attackDmg;
