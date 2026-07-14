@@ -34,6 +34,7 @@ public class BubbleManager : MonoBehaviour
                 {
                     bubblePool[i].transform.position = target.position + new Vector3(1.5f, 0, 0);
                     bubblePool[i].SetActive(true);
+                    break;
                 }
             }
         }
