@@ -49,7 +49,7 @@ public class Monster : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Buble"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Buble"))
         {
             BubbleConfined();
             return;
@@ -57,6 +57,10 @@ public class Monster : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            if(mstate == MonsterState.Move)
+            {
+                return;
+            }
             if(mstate == MonsterState.Confined )
             {
                 MonDie();
