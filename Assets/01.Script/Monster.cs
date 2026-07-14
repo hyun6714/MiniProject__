@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-enum MonsterState
+public enum MonsterState
 {
     Confined, Move , Die
 }
@@ -10,7 +10,7 @@ enum MonsterState
 public class Monster : MonoBehaviour
 {
 
-     MonsterState mstate;
+    public MonsterState mstate;
 
     float score;
     float speed;
@@ -41,7 +41,7 @@ public class Monster : MonoBehaviour
 
             case MonsterState.Confined:
                 timer += Time.deltaTime;
-                BubleRelease();
+                BubbleRelease();
                 break;
         }
 
@@ -51,7 +51,7 @@ public class Monster : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Buble"))
         {
-            BubleConfined();
+            BubbleConfined();
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && mstate == MonsterState.Confined)
@@ -77,14 +77,14 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void BubleConfined()
+    void BubbleConfined()
     {
         mstate = MonsterState.Confined;
         timer = 0;
         //구속상태 애니메이션 추가 
     }
 
-    void BubleRelease()
+    void BubbleRelease()
     {
         if(confinedTime <= timer)
         {
