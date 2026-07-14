@@ -5,13 +5,10 @@ public class Bubble : MonoBehaviour
     float bubbleLifetime;
     float attackDmg;
     float bubbleSpeed;
-    Rigidbody2D rb;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.bodyType = RigidbodyType2D.Kinematic;
-
         bubbleLifetime = 10f;
         attackDmg = 10;
         bubbleSpeed = 2f;
@@ -20,7 +17,7 @@ public class Bubble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = Vector2.up * bubbleSpeed;
+        transform.position += Vector3.up * bubbleSpeed * Time.deltaTime;
 
         DeactivateBubble();
     }
