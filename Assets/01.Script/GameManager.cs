@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour
     public void TimeUp()
     {
         isHurryUp =true;
-
        
        //여기에 시간초과시 들어갈 몬스터 속도증가 및 UI추가 
     }

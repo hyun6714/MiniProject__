@@ -118,4 +118,13 @@ public class Monster : MonoBehaviour
         GameManager.instance.CheckClear();
     }
 
+    public void MonSpeedUp()
+    {
+        speed *= 2; 
+    }
+
+    public void MonSpeedDown()
+    {
+        speed = 3f;
+    }
 }

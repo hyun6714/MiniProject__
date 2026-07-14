@@ -1,8 +1,5 @@
 using TMPro;
-using Unity.VectorGraphics;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class UIManager : MonoBehaviour
 {
