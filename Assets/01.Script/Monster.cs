@@ -55,16 +55,20 @@ public class Monster : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && mstate == MonsterState.Confined)
         {
-            if(mstate == MonsterState.Move)
+            if(mstate == MonsterState.Confined)
+            {
+                if(timer > 0.2f)
+                {
+                    MonDie();
+                }
+            }
+            else if(mstate == MonsterState.Move)
             {
                 return;
             }
-            if(mstate == MonsterState.Confined )
-            {
-                MonDie();
-            }
+
         }
     }
 
@@ -110,6 +114,7 @@ public class Monster : MonoBehaviour
         mstate = MonsterState.Die;
         if(UIManager.instance != null)
         {
+            Debug.Log(gameObject.name + "가 MonDie()를 호출함! 호출한 곳: " + System.Environment.StackTrace);
             UIManager.instance.GetScore(1000);
         }
         gameObject.SetActive(false);
