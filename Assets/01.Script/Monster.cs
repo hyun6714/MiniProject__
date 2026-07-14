@@ -52,6 +52,7 @@ public class Monster : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Buble"))
         {
             BubbleConfined();
+            return;
         }
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -80,15 +81,16 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void BubbleConfined()
+    public void BubbleConfined()
     {
+        Debug.Log("");
         mstate = MonsterState.Confined;
         speed = 0;
         timer = 0;
         //구속상태 애니메이션 추가 
     }
 
-    void BubbleRelease()
+    public void BubbleRelease()
     {
         if(confinedTime <= timer)
         {

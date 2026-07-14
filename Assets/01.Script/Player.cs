@@ -63,6 +63,7 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
             Monster monster = collision.gameObject.GetComponent<Monster>();
             if(monster != null)
             {
+                Debug.Log($"충돌 상태 {monster.mstate}");
                 if(monster.mstate != MonsterState.Confined)
                 {
                     Die();
