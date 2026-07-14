@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StageFail() //고쳐야함 몬스터 초기화후 생성이 아닌 실패후 그 상태로 진행이됨 
+    public void StageFail()
     {
         gameState = GameState.StageFail;
         Time.timeScale = 0;
