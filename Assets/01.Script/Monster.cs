@@ -83,8 +83,8 @@ public class Monster : MonoBehaviour
 
     public void BubbleConfined()
     {
-        Debug.Log("");
         mstate = MonsterState.Confined;
+        Debug.Log("구속");
         speed = 0;
         timer = 0;
         //구속상태 애니메이션 추가 
