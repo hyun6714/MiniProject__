@@ -42,7 +42,7 @@ public class StageManager : MonoBehaviour
         }
     }
 
-    public void StageClear() // 이거는 몬스터가 맵에 없을 때 발동해아하니 나중에 몬스터 만들 때 사용 
+    public void StageClear()
     {
         GameManager.instance.StageClear();
         if (cStage < portalSpawnPoints.Length)

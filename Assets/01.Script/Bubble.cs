@@ -15,7 +15,7 @@ public class Bubble : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() //벽과 충돌 무시하는 것 고쳐야함 
+    void Update() 
     {
         transform.position += Vector3.up * bubbleSpeed * Time.deltaTime;
 

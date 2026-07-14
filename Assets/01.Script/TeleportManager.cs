@@ -23,5 +23,3 @@ public class TeleportManager : MonoBehaviour
         }
     }
 }
-
-//+ 스테이지마다 끄고 키기

@@ -16,7 +16,7 @@ public class Items : MonoBehaviour
         itemtatal = 0;
         itemtimer = 20f;
 
-        InvokeRepeating("SpawnItem", 1f, itemtimer);//이거 스테이지 시작하고 소환하기+ 플레이어 충돌시 추가 필요
+        InvokeRepeating("SpawnItem", 1f, itemtimer);
 
     }
 
