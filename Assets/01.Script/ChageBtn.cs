@@ -36,3 +36,5 @@ public class ChageBtn : MonoBehaviour
 //5. 목숨 다끝나고 메인 넘어갈 때 다시 시작이 안되는 버그 
 
 //6. 타이머 시간 넘어가면 Hurrup 팝업 만들기 
+
+//7. 안보이는 벽을 만들어서 맵밖으로 나가는 거 방지 

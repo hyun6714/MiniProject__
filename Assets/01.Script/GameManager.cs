@@ -117,10 +117,7 @@ public class GameManager : MonoBehaviour
 
     public void TimeUp()
     {
-        isHurryUp =true;
-       
         TimeoutSpeedUp();
-
     }
 
     public void ResetTimer()
@@ -136,6 +133,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         monSpeed *= 2;
+        isHurryUp = true;
         Debug.Log($"현재 몬스터 속도 {monSpeed}");
     }
 }
