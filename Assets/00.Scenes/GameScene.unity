@@ -1318,6 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43afb6c82e6892b459f1833f10e5c351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  gameState: 0
   timeLimit: 60
   maxheart: 3
   heart: 0
@@ -4065,6 +4066,7 @@ MonoBehaviour:
   gameOverPop: {fileID: 1352400394}
   reStagePop: {fileID: 333843555}
   hurryUpPop: {fileID: 736018057}
+  clearPop: {fileID: 0}
   heartReGamePopText: {fileID: 1622021272}
   totalScoreText: {fileID: 1350243188}
 --- !u!4 &1389145737
@@ -4582,6 +4584,8 @@ MonoBehaviour:
   - {fileID: 1129689581645986080, guid: f8f52a7571d304f4ab2eca71ce7abe88, type: 3}
   - {fileID: 116231029778937322, guid: b37ad699633ab9645817511d69cea3e2, type: 3}
   - {fileID: 4226074040658061320, guid: 4d4abe565f513bf4b8800251e19f7f9d, type: 3}
+  itemMax: 0
+  itemTotal: 0
 --- !u!4 &1591890374
 Transform:
   m_ObjectHideFlags: 0
