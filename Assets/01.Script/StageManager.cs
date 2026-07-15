@@ -3,7 +3,7 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     public static StageManager instance;
-    public Transform[] portalSpawnPoints;//이거 포탈 매니저로 옮기기 
+    public Transform[] portalSpawnPoints;
     public int cStage;
 
     [SerializeField] private GameObject backGrounA;

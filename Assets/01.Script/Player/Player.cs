@@ -15,12 +15,13 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
     [SerializeField] private LayerMask monster;
     [SerializeField] private LayerMask buble;
 
-
+    SpriteRenderer sr;
     Rigidbody2D rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
 
         moveSpeed = 3f;
 
@@ -41,10 +42,12 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
         if(Keyboard.current.aKey.isPressed)
         {
             dir += Vector2.left;
+            sr.flipX = true;
         }
         if(Keyboard.current.dKey.isPressed)
         { 
             dir += Vector2.right;
+            sr.flipX = false;
         }
         rb.linearVelocity = new Vector2(dir.x * moveSpeed, rb.linearVelocity.y);
 

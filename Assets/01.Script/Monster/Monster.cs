@@ -19,11 +19,15 @@ public class Monster : MonoBehaviour
     float confinedTime;
     float timer;
 
+    SpriteRenderer sr;
+    Rigidbody2D rb;
     Vector3 targetP;
-
+    
     void Start()
     {
         mstate = MonsterState.Move;
+        sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
 
         confinedTime = 5f;
         SetNewTarget();
@@ -80,8 +84,19 @@ public class Monster : MonoBehaviour
             return;
         }
         mstate = MonsterState.Move;
-        transform.position = Vector3.MoveTowards(transform.position, targetP, GameManager.monSpeed*Time.deltaTime);
-        if(Mathf.Abs(transform.position.x-targetP.x) < 0.5f)
+        float direction = targetP.x - transform.position.x;
+
+        if(direction < 0)
+        {
+            sr.flipX = true;
+        }
+        else if(direction > 0)
+        {
+            sr.flipX = false;
+        }
+
+        rb.linearVelocity = new Vector2(Mathf.Sign(direction) * GameManager.monSpeed, rb.linearVelocity.y);
+        if(Mathf.Abs(direction) < 0.1f)
         {
             SetNewTarget();
         }
