@@ -10,6 +10,8 @@ public class Items : MonoBehaviour
     int random;
     float itemtimer;
 
+    float limitTime = 60f;
+
     private void Start()
     {
         itemMax = 5;
@@ -18,6 +20,11 @@ public class Items : MonoBehaviour
 
         InvokeRepeating("SpawnItem", 1f, itemtimer);
 
+    }
+
+    void Update()
+    {
+        limitTime -= Time.deltaTime;
     }
 
     void SpawnItem()
@@ -32,6 +39,10 @@ public class Items : MonoBehaviour
 
             Instantiate(items[random], spawnP, Quaternion.identity);
             itemtatal++;
+        }
+        else if (limitTime <=0)
+        {
+            CancelInvoke("SpawnItem");
         }
         else
         {
