@@ -46,9 +46,14 @@ public class BossMonster : Monster
         {
             Bstate = BossMonState.Die;
             gameObject.SetActive(false);
-
-            GameManager.instance.GameClear();
+            Die();
         }
+    }
+
+    void Die()
+    {
+        GameManager.instance.GameClear();
+        //여기에서 죽는다면 필요한 것들 호출
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
