@@ -136,5 +136,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         monSpeed *= 2;
+        Debug.Log($"현재 몬스터 속도 {monSpeed}");
     }
 }
