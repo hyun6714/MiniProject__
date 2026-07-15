@@ -73,8 +73,11 @@ public class Monster : MonoBehaviour
 
     void Move()
     {
+        if(mstate != MonsterState.Move)
+        {
+            return;
+        }
         mstate = MonsterState.Move;
-        GameManager.monSpeed = 1.5f;
         transform.position = Vector3.MoveTowards(transform.position, targetP, GameManager.monSpeed*Time.deltaTime);
         //여기에 추가 
         if(Mathf.Abs(transform.position.x-targetP.x) < 0.5f)
@@ -87,7 +90,6 @@ public class Monster : MonoBehaviour
     {
         mstate = MonsterState.Confined;
         Debug.Log("구속");
-        GameManager.monSpeed = 0f;
         timer = 0;
         //구속상태 애니메이션 추가 
     }

@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        UIManager.instance.StageFClose();
+
         gameState = GameState.GameOver;
         Time.timeScale = 0;
         MonsterSpawn.instance.StopSpawning();
@@ -100,7 +102,6 @@ public class GameManager : MonoBehaviour
        
         TimeoutSpeedUp();
 
-       //여기에 시간초과시 들어갈 몬스터 속도증가 및 UI추가 
     }
 
     public void ResetTimer()
