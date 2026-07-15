@@ -38,6 +38,11 @@ public class UIManager : MonoBehaviour
         scoreText.text = $"Now Score {currentScore}";
     }
 
+    public void ScoreRe()
+    {
+        scoreText.text = $"Now Score {0}";
+    }
+
     public void TotalScroe()
     {
         totalScore += currentScore;
@@ -71,6 +76,9 @@ public class UIManager : MonoBehaviour
     }
     public void StageFClose() // 스테이지 실패 팝업 닫기
     {
-        reStagePop.SetActive(false);
+        if(reStagePop != null)
+        {
+            reStagePop.SetActive(false);
+        }
     }
 }

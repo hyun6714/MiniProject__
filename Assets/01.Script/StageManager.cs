@@ -71,6 +71,7 @@ public class StageManager : MonoBehaviour
         if(currenStage != null)
         {
             Destroy(currenStage);
+            currenStage = null;
         }
 
         SpawnStage(cStage);

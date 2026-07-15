@@ -14,6 +14,7 @@ public class ChageBtn : MonoBehaviour
         SceneManager.LoadScene("GameScene");
         UIManager.instance.StageFClose();
         Time.timeScale = 1;
+        GameManager.instance.ResetHeart();
         //로비 같은 곳 만들기?
     }
 

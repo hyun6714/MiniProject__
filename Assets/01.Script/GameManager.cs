@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private bool isHurryUp;
 
 
-    public int maxheart = 3;
+    public int maxheart = 1;
     public int heart = 1;
     public int currentScore =0;
 
@@ -61,11 +61,11 @@ public class GameManager : MonoBehaviour
         currentScore = 0;
         if(UIManager.instance != null)
         {
-            UIManager.instance.GetScore(currentScore);
+            UIManager.instance.ScoreRe();
         }
     }
 
-    public void StageFail()//점수 초기화하는데 그스테이지에 얻은 점수 초기화 + 버블 삭제 
+    public void StageFail()
     {
         gameState = GameState.StageFail;
         Time.timeScale = 0;
@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
         GameObject[] allmon = GameObject.FindGameObjectsWithTag("Monster");
         if(allmon.Count(m => m.activeInHierarchy) == 0)
         {
+            Debug.Log("체크 호출");
             StageClear();
             StageManager.instance.StageClear();
         }

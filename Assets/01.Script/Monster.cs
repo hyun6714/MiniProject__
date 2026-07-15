@@ -14,6 +14,8 @@ public class Monster : MonoBehaviour
     float randomX;
     float randomY;
 
+    public int currentMonCount = 5;
+
     float confinedTime;
     float timer;
 
@@ -110,11 +112,16 @@ public class Monster : MonoBehaviour
         mstate = MonsterState.Die;
         if(UIManager.instance != null)
         {
-            Debug.Log(gameObject.name + "가 MonDie()를 호출함! 호출한 곳: " + System.Environment.StackTrace);
             UIManager.instance.GetScore(1000);
         }
+        currentMonCount--;
         gameObject.SetActive(false);
-        GameManager.instance.CheckClear();
+
+        if(currentMonCount <= 0)
+        {
+            Debug.Log("호출");
+            GameManager.instance.CheckClear();
+        }
     }
 
 
