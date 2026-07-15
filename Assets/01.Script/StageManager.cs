@@ -30,20 +30,26 @@ public class StageManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+        
+        SetTelepo();
     }
 
     private void Start()
     {
         BackGoundChage();
         SpawnStage(cStage);
-        SetTelepo();
     }
 
     public void SetTelepo()
     {
-        foreach(var tel in stageTelepoList)
+        Invoke("DelayedSetTelepo", 0.5f);
+    }
+
+    void DelayedSetTelepo()
+    {
+        foreach (var tel in stageTelepoList)
         {
-            if(tel.telepoGroup != null)
+            if (tel.telepoGroup != null)
             {
                 tel.telepoGroup.SetActive(tel.stageID == cStage);
             }
