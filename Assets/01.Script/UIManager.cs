@@ -42,7 +42,6 @@ public class UIManager : MonoBehaviour
     {
         totalScore += currentScore;
         totalScoreText.text = $"Total Score {totalScoreText}";
-        //여기에 토탈 점수 UI구현
     }
 
     public void ReGameHeartPop()

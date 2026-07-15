@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public float timeLimit = 60f;
     private bool isHurryUp;
 
+
+    public int maxheart = 3;
     public int heart = 1;
     public int currentScore =0;
 
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+
+        ResetHeart();
     }
 
     private void Start()
@@ -45,6 +49,11 @@ public class GameManager : MonoBehaviour
                 TimeUp();
             }
         }
+    }
+
+    public void ResetHeart()
+    {
+        heart = maxheart;
     }
 
     public void ResetScore()

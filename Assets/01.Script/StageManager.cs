@@ -33,6 +33,7 @@ public class StageManager : MonoBehaviour
         if(currenStage != null)
         {
             Destroy(currenStage);
+            currenStage = null;
         }
 
         if(index >= 0 && index < stagePrefabs.Length)
