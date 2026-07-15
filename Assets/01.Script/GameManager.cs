@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public float timeLimit = 60f;
     private bool isHurryUp;
 
-
     public int maxheart = 1;
     public int heart = 1;
     public int currentScore = 0;

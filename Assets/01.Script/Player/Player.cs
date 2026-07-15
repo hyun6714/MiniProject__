@@ -25,7 +25,7 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
 
         moveSpeed = 3f;
 
-        jumpPower = 8f;
+        jumpPower = 6f;
         jumpCount = 0;
         jumpMax = 1;
     }
