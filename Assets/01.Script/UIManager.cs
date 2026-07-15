@@ -25,6 +25,10 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        int hearts = GameManager.instance.heart;
+        heartloosText.text = $" ¢¾  x  {hearts}";
+        heartReGamePopText.text = $" ¢¾  x {hearts}";
+
         totalScore = 0;
         scoreText.text = "score : ";
     }
