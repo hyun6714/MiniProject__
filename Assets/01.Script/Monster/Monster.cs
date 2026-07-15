@@ -71,7 +71,19 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void SetNewTarget() 
+    protected virtual void SpriteDirection(float direction)
+    {
+        if (direction < 0)
+        {
+            sr.flipX = true;
+        }
+        else if (direction > 0)
+        {
+            sr.flipX = false;
+        }
+    }
+
+    protected virtual void SetNewTarget() 
     {
         randomX = Random.Range(-9f, 9f);
         targetP = new Vector3(randomX, transform.position.y, 0);
@@ -86,14 +98,7 @@ public class Monster : MonoBehaviour
         mstate = MonsterState.Move;
         float direction = targetP.x - transform.position.x;
 
-        if(direction < 0)
-        {
-            sr.flipX = true;
-        }
-        else if(direction > 0)
-        {
-            sr.flipX = false;
-        }
+        SpriteDirection(direction);
 
         rb.linearVelocity = new Vector2(Mathf.Sign(direction) * GameManager.monSpeed, rb.linearVelocity.y);
         if(Mathf.Abs(direction) < 0.1f)

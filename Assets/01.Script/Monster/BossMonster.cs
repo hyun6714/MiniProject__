@@ -11,14 +11,32 @@ public class BossMonster : Monster
     int hp = 1000;
     
     BossMonState Bstate;
+
+    SpriteRenderer sr;
+    Rigidbody2D rb;
     [SerializeField] GameManager BossPrefab;
 
     int dmg = Bubble.attackDmg;
+
+    void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     protected override void Move()
     {
         Bstate = BossMonState.Move;
         base.Move();
+    }
+
+    protected override void SetNewTarget()
+    {
+        base.SetNewTarget();
+    }
+
+    protected override void SpriteDirection(float direction)
+    {
+        sr.flipX = (direction > 0);
     }
 
     public void TakeDmg()
