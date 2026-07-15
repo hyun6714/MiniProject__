@@ -61,7 +61,7 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Monster"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Monster") || collision.gameObject.layer == LayerMask.NameToLayer("BossMonster"))
         {
             Monster monster = collision.gameObject.GetComponent<Monster>();
             if(monster.mstate == MonsterState.Confined)
