@@ -59,7 +59,6 @@ public class StageManager : MonoBehaviour
         {
             BackGoundChage();
             SpawnStage(cStage);
-            SetTelepo();
 
             GameManager.instance.ResetTimer();
             MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
