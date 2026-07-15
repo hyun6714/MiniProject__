@@ -19,6 +19,5 @@ public class TImeUI : MonoBehaviour
             timer -= Time.deltaTime;
             timerImage.fillAmount = timer / timeLimit; 
         }
-
     }
 }
