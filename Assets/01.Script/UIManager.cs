@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject reStagePop;
     [SerializeField] private TextMeshProUGUI heartloosText;
     [SerializeField] private TextMeshProUGUI heartReGamePopText;
+    [SerializeField] private TextMeshProUGUI totalScoreText;
 
     private void Awake()
     {
@@ -28,18 +29,19 @@ public class UIManager : MonoBehaviour
         heartReGamePopText.text = $" ♥  x {hearts}";
 
         totalScore = 0;
-        scoreText.text = "score : ";
+        scoreText.text = "Score : ";
     }
 
     public void GetScore(int sc)
     {
         currentScore += sc;
-        scoreText.text = $"now score {currentScore}";
+        scoreText.text = $"Now Score {currentScore}";
     }
 
     public void TotalScroe()
     {
         totalScore += currentScore;
+        totalScoreText.text = $"Total Score {totalScoreText}";
         //여기에 토탈 점수 UI구현
     }
 
