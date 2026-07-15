@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI scoreText;
     int totalScore;
-
+    int currentScore;
     [SerializeField] private GameObject gameOverPop;
     [SerializeField] private GameObject reStagePop;
     [SerializeField] private TextMeshProUGUI heartloosText;
@@ -19,9 +19,7 @@ public class UIManager : MonoBehaviour
             instance = this;
 
         else
-            Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
-    }
+            Destroy(gameObject);    }
 
     private void Start()
     {
@@ -35,8 +33,14 @@ public class UIManager : MonoBehaviour
 
     public void GetScore(int sc)
     {
-        totalScore += sc;
-        scoreText.text = $"now score {totalScore}";
+        currentScore += sc;
+        scoreText.text = $"now score {currentScore}";
+    }
+
+    public void TotalScroe()
+    {
+        totalScore += currentScore;
+        //여기에 토탈 점수 UI구현
     }
 
     public void ReGameHeartPop()

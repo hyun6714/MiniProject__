@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private bool isHurryUp;
 
     public int heart = 1;
+    public int currentScore =0;
 
     public static GameManager instance;
 
@@ -24,7 +25,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -47,11 +47,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResetScore()
+    {
+        currentScore = 0;
+        if(UIManager.instance != null)
+        {
+            UIManager.instance.GetScore(currentScore);
+        }
+    }
+
     public void StageFail()//점수 초기화하는데 그스테이지에 얻은 점수 초기화 + 버블 삭제 
     {
         gameState = GameState.StageFail;
         Time.timeScale = 0;
         MonsterSpawn.instance.StopSpawning();
+        ResetScore();
 
         heart--;
         UIManager.instance.HeartLoss();
@@ -82,6 +92,7 @@ public class GameManager : MonoBehaviour
     public void StageClear()
     {
         gameState = GameState.StageClear;
+        UIManager.instance.TotalScroe();
         MonsterSpawn.instance.StopSpawning();
     }
 

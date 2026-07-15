@@ -1,9 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public struct StageTelepoPair
+{
+    public int stageID;
+    public GameObject telepoGroup;
+}
+
 
 public class StageManager : MonoBehaviour
 {
     public static StageManager instance;
     public Transform[] portalSpawnPoints;//이거 포탈 매니저로 옮기기 
+    public List<StageTelepoPair> stageTelepoList;
     public int cStage;
 
     [SerializeField] private GameObject backGrounA;
@@ -12,6 +22,7 @@ public class StageManager : MonoBehaviour
 
     public GameObject[] stagePrefabs;
     public GameObject currenStage;
+    public GameObject[] allTelePo;
 
     private void Awake()
     {
@@ -19,15 +30,25 @@ public class StageManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
         BackGoundChage();
         SpawnStage(cStage);
+        SetTelepo();
     }
 
+    public void SetTelepo()
+    {
+        foreach(var tel in stageTelepoList)
+        {
+            if(tel.telepoGroup != null)
+            {
+                tel.telepoGroup.SetActive(tel.stageID == cStage);
+            }
+        }
+    }
 
     public void SpawnStage(int index)
     {
@@ -60,6 +81,8 @@ public class StageManager : MonoBehaviour
         {
             BackGoundChage();
             SpawnStage(cStage);
+            SetTelepo();
+
             GameManager.instance.ResetTimer();
             MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
         }
