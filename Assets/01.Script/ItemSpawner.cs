@@ -16,7 +16,10 @@ public class ItemSpawner : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
         else
             Destroy(gameObject);
@@ -63,10 +66,10 @@ public class ItemSpawner : MonoBehaviour
     public void ItemSpawnStop()
     {
         CancelInvoke("SpawnItem");
-        ItemSpawner[] itemInScene = FindObjectsByType<ItemSpawner>(FindObjectsSortMode.None);
-        foreach(ItemSpawner item in itemInScene )
+        ItemScore[] itemInScene = FindObjectsByType<ItemScore>(FindObjectsSortMode.None);
+        foreach(ItemScore item in itemInScene )
         {
-            Destroy(item.gameObject);
+            item.gameObject.SetActive(false);
         }
 
         itemTotal = 0;

@@ -20,11 +20,14 @@ public class GameManager : MonoBehaviour
     public int currentScore = 0;
 
     public static GameManager instance;
-
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
         else
             Destroy(gameObject);
 
@@ -69,10 +72,11 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.StageFail;
         Time.timeScale = 0;
-        MonsterSpawn.instance.StopSpawning();
-        ResetScore();
-        ItemSpawner.instance.ItemSpawnStop();
         heart--;
+        ResetScore();
+
+        MonsterSpawn.instance.StopSpawning();
+        ItemSpawner.instance.ItemSpawnStop();
         UIManager.instance.StageF(); 
         if(heart <=0)
         {

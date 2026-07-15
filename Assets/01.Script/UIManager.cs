@@ -18,10 +18,13 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
         else
-            Destroy(gameObject);   
+            Destroy(gameObject);
     }
 
     private void Start()
