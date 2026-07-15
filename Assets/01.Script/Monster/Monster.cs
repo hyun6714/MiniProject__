@@ -77,7 +77,7 @@ public class Monster : MonoBehaviour
         targetP = new Vector3(randomX, transform.position.y, 0);
     }
 
-    void Move()
+    protected virtual void Move()
     {
         if(mstate != MonsterState.Move)
         {

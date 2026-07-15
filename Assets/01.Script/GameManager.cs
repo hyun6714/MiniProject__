@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.GameClear;
         MonsterSpawn.instance.StopSpawning();
+        UIManager.instance.GameClearPop();
     }
 
     public void StageClear()

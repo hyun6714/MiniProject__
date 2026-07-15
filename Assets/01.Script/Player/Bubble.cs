@@ -3,14 +3,13 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     float bubbleLifetime;
-    float attackDmg;
+    public static int attackDmg = 10;
     float bubbleSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         bubbleLifetime = 10f;
-        attackDmg = 10;
         bubbleSpeed = 2f;
     }
 
@@ -40,6 +39,11 @@ public class Bubble : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Monster"))
+        {
+            gameObject.SetActive(false);
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("BossMonster"))
         {
             gameObject.SetActive(false);
         }

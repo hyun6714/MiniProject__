@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPop;
     [SerializeField] private GameObject reStagePop;
     [SerializeField] private GameObject hurryUpPop;
+    [SerializeField] private GameObject clearPop;
+
     [SerializeField] private TextMeshProUGUI heartReGamePopText;
     [SerializeField] private TextMeshProUGUI totalScoreText;
 
@@ -58,6 +60,14 @@ public class UIManager : MonoBehaviour
     {
         int hearts = GameManager.instance.heart;
         heartReGamePopText.text = $" ¢¾  x {hearts}";
+    }
+
+    public void GameClearPop()
+    {
+        if(clearPop != null)
+        {
+            clearPop.SetActive(true);
+        }
     }
 
     public void GameOverPop()
