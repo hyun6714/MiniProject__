@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public float timeLimit = 60f;
     private bool isHurryUp;
 
-    public int heart;
+    public int heart = 1;
 
     public static GameManager instance;
 
@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     {
         monSpeed = 1.5f;
         isHurryUp = false;
-        heart = 3;
     }
 
     private void Update()
