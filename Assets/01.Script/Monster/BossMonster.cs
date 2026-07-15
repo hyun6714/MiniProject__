@@ -40,5 +40,5 @@ public class BossMonster : Monster
             TakeDmg();
         }
     }
-    //보스몬스터의 공격 + 체력바 UI + 
+    //보스몬스터의 공격 + 체력바 UI + 소환(스크립트 따로 생성)
 }
