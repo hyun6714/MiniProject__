@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
     public void TimeUp()
     {
         TimeoutSpeedUp();
+        UIManager.instance.HurryPop();
     }
 
     public void ResetTimer()

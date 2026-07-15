@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class UIManager : MonoBehaviour
     int currentScore;
     [SerializeField] private GameObject gameOverPop;
     [SerializeField] private GameObject reStagePop;
+    [SerializeField] private GameObject hurryUpPop;
     [SerializeField] private TextMeshProUGUI heartReGamePopText;
     [SerializeField] private TextMeshProUGUI totalScoreText;
 
@@ -56,16 +58,25 @@ public class UIManager : MonoBehaviour
 
     public void GameOverPop()
     {
-        gameOverPop.SetActive(true);
+        if (gameOverPop != null)
+        {
+            gameOverPop.SetActive(true);
+        }
     }
     public void GameOverPopClose()
     {
-        gameOverPop.SetActive(false);
+        if(gameOverPop != null)
+        {
+            gameOverPop.SetActive(false);
+        }
     }
     public void StageF()//스테이지 실패 팝업 열기
     {
-        reStagePop.SetActive(true);
-        ReGameHeartPop();
+        if (reStagePop != null)
+        {
+            reStagePop.SetActive(true);
+            ReGameHeartPop();
+        }
     }
     public void StageFClose() // 스테이지 실패 팝업 닫기
     {
@@ -73,5 +84,23 @@ public class UIManager : MonoBehaviour
         {
             reStagePop.SetActive(false);
         }
+    }
+
+    public void HurryPop()
+    {
+        if(hurryUpPop !=null)
+        {
+            StopAllCoroutines();
+            StartCoroutine(HurryUpRoutine());
+        }
+    }
+
+    IEnumerator HurryUpRoutine()
+    {
+        hurryUpPop.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        hurryUpPop.SetActive(false);
     }
 }
