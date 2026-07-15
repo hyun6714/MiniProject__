@@ -55,6 +55,7 @@ public class StageManager : MonoBehaviour
 
     public void NextStage()
     {
+        Monster.currentMonCount = 5;
         cStage++;
         if (cStage < stagePrefabs.Length)
         {
@@ -66,6 +67,7 @@ public class StageManager : MonoBehaviour
         }
     }
 
+
     public void ReStage()
     {
         if(currenStage != null)
@@ -74,6 +76,7 @@ public class StageManager : MonoBehaviour
             currenStage = null;
         }
 
+        Monster.currentMonCount = 5;
         SpawnStage(cStage);
         Time.timeScale = 1;
         UIManager.instance.StageFClose();

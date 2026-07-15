@@ -14,7 +14,7 @@ public class Monster : MonoBehaviour
     float randomX;
     float randomY;
 
-    public int currentMonCount = 5;
+    public static int currentMonCount = 5;
 
     float confinedTime;
     float timer;
@@ -81,7 +81,6 @@ public class Monster : MonoBehaviour
         }
         mstate = MonsterState.Move;
         transform.position = Vector3.MoveTowards(transform.position, targetP, GameManager.monSpeed*Time.deltaTime);
-        //여기에 추가 
         if(Mathf.Abs(transform.position.x-targetP.x) < 0.5f)
         {
             SetNewTarget();
@@ -115,6 +114,7 @@ public class Monster : MonoBehaviour
             UIManager.instance.GetScore(1000);
         }
         currentMonCount--;
+        Debug.Log($"현 몬스 {currentMonCount}");
         gameObject.SetActive(false);
 
         if(currentMonCount <= 0)
@@ -123,6 +123,5 @@ public class Monster : MonoBehaviour
             GameManager.instance.CheckClear();
         }
     }
-
 
 }

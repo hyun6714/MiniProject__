@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     public int maxheart = 1;
     public int heart = 1;
-    public int currentScore =0;
+    public int currentScore = 0;
 
     public static GameManager instance;
 
@@ -73,7 +73,6 @@ public class GameManager : MonoBehaviour
         ResetScore();
 
         heart--;
-        UIManager.instance.HeartLoss();
         UIManager.instance.StageF(); 
         if(heart <=0)
         {

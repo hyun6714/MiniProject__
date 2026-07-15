@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
     int currentScore;
     [SerializeField] private GameObject gameOverPop;
     [SerializeField] private GameObject reStagePop;
-    [SerializeField] private TextMeshProUGUI heartloosText;
     [SerializeField] private TextMeshProUGUI heartReGamePopText;
     [SerializeField] private TextMeshProUGUI totalScoreText;
 
@@ -25,7 +24,6 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         int hearts = GameManager.instance.heart;
-        heartloosText.text = $" ¢¾  x  {hearts}";
         heartReGamePopText.text = $" ¢¾  x {hearts}";
 
         totalScore = 0;
@@ -53,12 +51,6 @@ public class UIManager : MonoBehaviour
     {
         int hearts = GameManager.instance.heart;
         heartReGamePopText.text = $" ¢¾  x {hearts}";
-    }
-
-    public void HeartLoss()
-    {
-        int hearts = GameManager.instance.heart;
-        heartloosText.text = $" ¢¾  x  {hearts}";
     }
 
     public void GameOverPop()
