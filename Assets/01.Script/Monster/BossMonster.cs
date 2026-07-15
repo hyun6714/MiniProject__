@@ -32,5 +32,13 @@ public class BossMonster : Monster
             GameManager.instance.GameClear();
         }
     }
-    //여기에 받는 데미지 공식 및 보스만의 공격& 맞으면 플레이어 사망 및 등등등 기억안나서 패스 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Bubble"))
+        {
+            TakeDmg();
+        }
+    }
+    //보스몬스터의 공격 + 체력바 UI + 
 }
