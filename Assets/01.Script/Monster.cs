@@ -11,7 +11,6 @@ public class Monster : MonoBehaviour
     public MonsterState mstate;
 
     float score;
-    float speed;
     float randomX;
     float randomY;
 
@@ -23,7 +22,6 @@ public class Monster : MonoBehaviour
     void Start()
     {
         mstate = MonsterState.Move;
-        speed = 3f;
 
         confinedTime = 5f;
         SetNewTarget();
@@ -76,8 +74,9 @@ public class Monster : MonoBehaviour
     void Move()
     {
         mstate = MonsterState.Move;
-        transform.position = Vector3.MoveTowards(transform.position, targetP, speed*Time.deltaTime);
-        speed = 3f;
+        GameManager.monSpeed = 1.5f;
+        transform.position = Vector3.MoveTowards(transform.position, targetP, GameManager.monSpeed*Time.deltaTime);
+        //여기에 추가 
         if(Mathf.Abs(transform.position.x-targetP.x) < 0.5f)
         {
             SetNewTarget();
@@ -88,7 +87,7 @@ public class Monster : MonoBehaviour
     {
         mstate = MonsterState.Confined;
         Debug.Log("구속");
-        speed = 0;
+        GameManager.monSpeed = 0f;
         timer = 0;
         //구속상태 애니메이션 추가 
     }
@@ -116,13 +115,5 @@ public class Monster : MonoBehaviour
         GameManager.instance.CheckClear();
     }
 
-    public void MonSpeedUp()
-    {
-        speed *= 2; 
-    }
 
-    public void MonSpeedDown()
-    {
-        speed = 3f;
-    }
 }

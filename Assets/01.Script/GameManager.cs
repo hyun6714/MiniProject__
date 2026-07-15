@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Linq;
+using System;
 enum GameState
 {
     StageClear, StageFail, GameOver, GameClear
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     private GameState gameState;
 
+    public static float monSpeed;
     public float timeLimit = 60f;
     private bool isHurryUp;
 
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        monSpeed = 1.5f;
         isHurryUp = false;
         heart = 3;
     }
@@ -95,6 +98,8 @@ public class GameManager : MonoBehaviour
     {
         isHurryUp =true;
        
+        TimeoutSpeedUp();
+
        //여기에 시간초과시 들어갈 몬스터 속도증가 및 UI추가 
     }
 
@@ -102,5 +107,14 @@ public class GameManager : MonoBehaviour
     {
         timeLimit = 60;
         isHurryUp = false;
+    }
+
+    public void TimeoutSpeedUp()
+    {
+        if(isHurryUp)
+        {
+            return;
+        }
+        monSpeed *= 2;
     }
 }
