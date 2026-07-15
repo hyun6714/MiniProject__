@@ -27,7 +27,8 @@ public class UIManager : MonoBehaviour
         heartReGamePopText.text = $" ¢¾  x {hearts}";
 
         totalScore = 0;
-        scoreText.text = "Score : ";
+        scoreText.text = "Score : 0";
+        totalScoreText.text = $"Total Score 0";
     }
 
     public void GetScore(int sc)
