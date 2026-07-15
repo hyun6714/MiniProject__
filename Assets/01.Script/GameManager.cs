@@ -1,14 +1,14 @@
 using UnityEngine;
 using System.Linq;
 using System;
-enum GameState
+public enum GameState
 {
     StageClear, StageFail, GameOver, GameClear
 }
 
 public class GameManager : MonoBehaviour
 {
-    private GameState gameState;
+    public GameState gameState;
 
     public static float monSpeed;
     public float timeLimit = 60f;
@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         MonsterSpawn.instance.StopSpawning();
         ResetScore();
-
+        ItemSpawner.instance.ItemSpawnStop();
         heart--;
         UIManager.instance.StageF(); 
         if(heart <=0)

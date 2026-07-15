@@ -21,7 +21,8 @@ public class UIManager : MonoBehaviour
             instance = this;
 
         else
-            Destroy(gameObject);    }
+            Destroy(gameObject);   
+    }
 
     private void Start()
     {
@@ -90,7 +91,7 @@ public class UIManager : MonoBehaviour
     {
         if(hurryUpPop !=null)
         {
-            StopAllCoroutines();
+            StopCoroutine(HurryUpRoutine());
             StartCoroutine(HurryUpRoutine());
         }
     }

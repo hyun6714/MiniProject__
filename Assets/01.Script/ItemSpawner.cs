@@ -1,21 +1,31 @@
 using UnityEngine;
 
-public class Items : MonoBehaviour
+public class ItemSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] items;
+    public static ItemSpawner instance;
 
-    int itemMax;
-    int itemtatal;
+    public int itemMax;
+    public int itemTotal;
 
     int random;
     float itemtimer;
 
     float limitTime = 60f;
 
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+
+        else
+            Destroy(gameObject);
+    }
+
     private void Start()
     {
         itemMax = 5;
-        itemtatal = 0;
+        itemTotal = 0;
         itemtimer = 20f;
 
         InvokeRepeating("SpawnItem", 1f, itemtimer);
@@ -27,18 +37,18 @@ public class Items : MonoBehaviour
         limitTime -= Time.deltaTime;
     }
 
-    void SpawnItem()
+    public void SpawnItem()
     {
         float randomX = Random.Range(-9f, 9f);
         float randomY = Random.Range(-8.5f, 5f);
 
-        if (itemtatal < itemMax)
+        if (itemTotal < itemMax)
         {
             Vector3 spawnP = new Vector3(randomX, randomY, 0);
             random = Random.Range(0, items.Length);
 
             Instantiate(items[random], spawnP, Quaternion.identity);
-            itemtatal++;
+            itemTotal++;
         }
         else if (limitTime <=0)
         {
@@ -48,5 +58,18 @@ public class Items : MonoBehaviour
         {
             CancelInvoke("SpawnItem");
         }
+    }
+
+    public void ItemSpawnStop()
+    {
+        CancelInvoke("SpawnItem");
+        ItemSpawner[] itemInScene = FindObjectsByType<ItemSpawner>(FindObjectsSortMode.None);
+        foreach(ItemSpawner item in itemInScene )
+        {
+            Destroy(item.gameObject);
+        }
+
+        itemTotal = 0;
+        limitTime = 60f;
     }
 }

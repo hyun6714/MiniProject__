@@ -25,7 +25,7 @@ public class ChageBtn : MonoBehaviour
 }
 
 
-//1.버블이 땅 통과 고치기
+//1.버블이 땅 통과 고치기or 벽에 닿을 시 비활성화 하기 
 
 //3. 보스몬스터 관련 구현
 
@@ -36,3 +36,5 @@ public class ChageBtn : MonoBehaviour
 //6. 타이머 시간 넘어가면 Hurrup 팝업 만들기 //만듬 근데 확인 할 필요 
 
 //8. 포탈 확인해야 함 
+
+//유니티 세팅중

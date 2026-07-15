@@ -62,6 +62,7 @@ public class StageManager : MonoBehaviour
             BackGoundChage();
             SpawnStage(cStage);
 
+            ItemSpawner.instance.SpawnItem();
             GameManager.instance.ResetTimer();
             MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
         }
@@ -81,6 +82,7 @@ public class StageManager : MonoBehaviour
         Time.timeScale = 1;
         UIManager.instance.StageFClose();
         GameManager.instance.ResetTimer();
+        ItemSpawner.instance.SpawnItem();
         MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
 
     }
