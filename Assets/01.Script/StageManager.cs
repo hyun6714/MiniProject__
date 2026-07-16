@@ -46,12 +46,9 @@ public class StageManager : MonoBehaviour
 
     public void SpawnBossMon()
     {
-        if(cStage == 4)
-        {
-            MonsterSpawn.instance.StopSpawning();
-            BossMonSpanw.instance.BossSpawn();
-            BossHpBarUI.instance.OnSlider();
-        }
+        MonsterSpawn.instance.StopSpawning();
+        BossMonSpanw.instance.BossSpawn();
+        BossHpBarUI.instance.OnSlider();
     }
 
     public void SpawnStage(int index)
@@ -105,11 +102,6 @@ public class StageManager : MonoBehaviour
             currenStage = null;
         }
 
-        if(cStage == 4)
-        {
-            SpawnBossMon();
-        }
-
         Monster.currentMonCount = 5;
         SpawnStage(cStage);
         Time.timeScale = 1;
@@ -118,7 +110,14 @@ public class StageManager : MonoBehaviour
         GameManager.instance.ResetTimer();
         ItemSpawner.instance.SpawnItem();
 
-        MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
+        if(cStage != 4)
+        {
+            MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
+        }
+        else
+        {
+            SpawnBossMon();
+        }
 
     }
 

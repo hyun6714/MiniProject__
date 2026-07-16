@@ -30,8 +30,14 @@ public class BossMonSpanw : MonoBehaviour
     {
         if(SpawnCount<SpawnMax)
         {
-            Instantiate(BossPrefab, new Vector3(7, -4, 0), Quaternion.identity);
+            GameObject bossobj = Instantiate(BossPrefab, new Vector3(7, -4, 0), Quaternion.identity);
             SpawnCount++;
+
+            BossMonster bossSc = bossobj.GetComponent<BossMonster>();
+            if (bossSc != null)
+            {
+                bossSc.ResetBossHp();
+            }
         }
     }
 

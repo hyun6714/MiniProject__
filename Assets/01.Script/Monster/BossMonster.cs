@@ -81,7 +81,6 @@ public class BossMonster : Monster
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bubble"))
         {
-            Debug.Log("»£√‚");
             TakeDmg();
         }
     }
