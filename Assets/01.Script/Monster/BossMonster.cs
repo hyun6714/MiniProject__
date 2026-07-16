@@ -64,6 +64,7 @@ public class BossMonster : Monster
         Bstate = BossMonState.Die;
         GameManager.instance.GameClear();
         gameObject.SetActive(false);
+        BossHpBarUI.instance.CloseSlider();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

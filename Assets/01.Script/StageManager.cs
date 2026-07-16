@@ -30,6 +30,7 @@ public class StageManager : MonoBehaviour
         BackGoundChage();
         SpawnStage(cStage);
         StageStart();
+        BossHpBarUI.instance.CloseSlider();
     }
 
     public void StageStart()
@@ -50,6 +51,7 @@ public class StageManager : MonoBehaviour
         {
             MonsterSpawn.instance.StopSpawning();
             BossMonSpanw.instance.BossSpawn();
+            BossHpBarUI.instance.OnSlider();
         }
     }
 

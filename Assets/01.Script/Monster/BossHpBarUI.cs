@@ -16,6 +16,7 @@ public class BossHpBarUI : MonoBehaviour
         else
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
+
     }
 
     public void OnSlider()
