@@ -14,7 +14,6 @@ public class BossMonster : Monster
 
     SpriteRenderer sr;
     Rigidbody2D rb;
-    [SerializeField] GameManager BossPrefab;
 
     int dmg = Bubble.attackDmg;
 
