@@ -31,6 +31,14 @@ public class StageManager : MonoBehaviour
         SpawnStage(cStage);
     }
 
+    public void SpawnBossMon()
+    {
+        if(cStage == 4)
+        {
+            MonsterSpawn.instance.StopSpawning();
+            BossMonSpanw.instance.BossSpawn();
+        }
+    }
 
     public void SpawnStage(int index)
     {
