@@ -29,8 +29,18 @@ public class StageManager : MonoBehaviour
     {
         BackGoundChage();
         SpawnStage(cStage);
+    }
 
-        SpawnBossMon();//체크용 삭제필요
+    public void StageStart()
+    {
+        if(cStage == 4)
+        {
+            SpawnBossMon();
+        }
+        else
+        {
+            MonsterSpawn.instance.SpawnMon();
+        }
     }
 
     public void SpawnBossMon()

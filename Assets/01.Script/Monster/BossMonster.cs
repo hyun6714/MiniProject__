@@ -12,9 +12,6 @@ public class BossMonster : Monster
     
     BossMonState Bstate;
 
-    SpriteRenderer sr;
-    Rigidbody2D rb;
-
     int dmg = Bubble.attackDmg;
 
     void Start()

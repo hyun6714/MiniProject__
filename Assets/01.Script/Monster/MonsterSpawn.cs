@@ -40,7 +40,10 @@ public class MonsterSpawn : MonoBehaviour
         MinY = -8.5f;
         MaxX = 9;
         MaxY = 5;
+    }
 
+    public void SpawnMon()
+    {
         InvokeRepeating("SummonEnemy", 1f, 1f);
     }
 
