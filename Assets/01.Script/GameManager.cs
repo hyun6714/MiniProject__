@@ -19,17 +19,18 @@ public class GameManager : MonoBehaviour
     public int currentScore = 0;
 
     public static GameManager instance;
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
 
         else
             Destroy(gameObject);
 
+        DontDestroyOnLoad(gameObject);
         ResetHeart();
     }
 
