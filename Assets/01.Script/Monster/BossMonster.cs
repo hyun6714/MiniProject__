@@ -44,7 +44,6 @@ public class BossMonster : Monster
     public void TakeDmg()
     {
         int dmg = Bubble.attackDmg;
-        Debug.Log("µ¥¹ÌÁö");
         currenHp -= dmg;
         if(currenHp <=0)
         {

@@ -116,6 +116,7 @@ public class StageManager : MonoBehaviour
         }
         else
         {
+            BossMonSpanw.instance.ResetSpawnCount();
             SpawnBossMon();
         }
 

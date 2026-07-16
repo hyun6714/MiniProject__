@@ -26,6 +26,11 @@ public class BossMonSpanw : MonoBehaviour
         SpawnMax = 1;
     }
 
+    public void ResetSpawnCount()
+    {
+        SpawnCount=0;
+    }
+
     public void BossSpawn()
     {
         if(SpawnCount<SpawnMax)
@@ -36,6 +41,8 @@ public class BossMonSpanw : MonoBehaviour
             BossMonster bossSc = bossobj.GetComponent<BossMonster>();
             if (bossSc != null)
             {
+                bossSc.bossHpbar = BossHpBarUI.instance;
+
                 bossSc.ResetBossHp();
             }
         }

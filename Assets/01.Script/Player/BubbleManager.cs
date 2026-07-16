@@ -31,7 +31,11 @@ public class BubbleManager : MonoBehaviour
             {
                 if (!bubblePool[i].activeSelf)
                 {
-                    bubblePool[i].transform.position = target.position + new Vector3(1.5f, 0, 0);
+                    float direction = Mathf.Sign(target.localScale.x);
+
+                    Vector3 spawnOffset = new Vector3 (1.5f*direction, 0, 0);
+
+                    bubblePool[i].transform.position = target.position + spawnOffset;
                     bubblePool[i].SetActive(true);
                     break;
                 }

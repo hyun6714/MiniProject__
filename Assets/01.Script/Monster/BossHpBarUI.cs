@@ -34,10 +34,10 @@ public class BossHpBarUI : MonoBehaviour
         bossHpbar.gameObject.SetActive(false);
     }
 
-    public void Setup(float maxHp)
+    public void Setup(float maxHps)
     {
-        bossHpbar.maxValue = maxHp;
-        bossHpbar.value = maxHp;
+        bossHpbar.maxValue = maxHps;
+        bossHpbar.value = maxHps;
     }
 
     public void UpdateHpSlider(float currentHp)
