@@ -9,6 +9,7 @@ public class BossMonster : Monster
 {
     [SerializeField] private int maxHp = 1000;
     [SerializeField] private int currenHp;
+    [SerializeField] GameObject bossAmmoPrefab;
 
     public BossHpBarUI bossHpbar;
     
