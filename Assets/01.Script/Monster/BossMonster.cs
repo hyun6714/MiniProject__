@@ -60,5 +60,4 @@ public class BossMonster : Monster
             TakeDmg();
         }
     }
-    //보스몬스터의 공격 + 체력바 UI + 소환(스크립트 따로 생성) + 이동하는 거 업데이트로 스위치문으로 하기 
 }

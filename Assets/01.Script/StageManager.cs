@@ -29,6 +29,7 @@ public class StageManager : MonoBehaviour
     {
         BackGoundChage();
         SpawnStage(cStage);
+        StageStart();
     }
 
     public void StageStart()
