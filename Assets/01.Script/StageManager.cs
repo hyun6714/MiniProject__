@@ -30,7 +30,6 @@ public class StageManager : MonoBehaviour
         BackGoundChage();
         SpawnStage(cStage);
         StageStart();
-        BossHpBarUI.instance.CloseSlider();
     }
 
     public void StageStart()
@@ -104,6 +103,11 @@ public class StageManager : MonoBehaviour
         {
             Destroy(currenStage);
             currenStage = null;
+        }
+
+        if(cStage == 4)
+        {
+            SpawnBossMon();
         }
 
         Monster.currentMonCount = 5;

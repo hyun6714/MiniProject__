@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Bubble : MonoBehaviour
@@ -48,4 +49,5 @@ public class Bubble : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
 }

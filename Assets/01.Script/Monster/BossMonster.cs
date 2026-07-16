@@ -7,8 +7,8 @@ public enum BossMonState
 
 public class BossMonster : Monster
 {
-    int maxHp = 1000;
-    int currenHp;
+    [SerializeField] private int maxHp = 1000;
+    [SerializeField] private int currenHp;
 
     public BossHpBarUI bossHpbar;
     
@@ -24,7 +24,6 @@ public class BossMonster : Monster
             bossHpbar.Setup(maxHp);
         }
     }
-
 
     protected override void Move()
     {
@@ -45,7 +44,7 @@ public class BossMonster : Monster
     public void TakeDmg()
     {
         int dmg = Bubble.attackDmg;
-
+        Debug.Log("데미지");
         currenHp -= dmg;
         if(currenHp <=0)
         {
@@ -67,10 +66,22 @@ public class BossMonster : Monster
         BossHpBarUI.instance.CloseSlider();
     }
 
+    public void ResetBossHp()
+    {
+        currenHp = maxHp;
+        if(bossHpbar != null)
+        {
+            bossHpbar.Setup(maxHp);
+            bossHpbar.OnSlider();
+        }
+        bossHpbar.gameObject.SetActive(true);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bubble"))
         {
+            Debug.Log("호출");
             TakeDmg();
         }
     }

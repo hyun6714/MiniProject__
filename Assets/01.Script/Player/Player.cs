@@ -13,7 +13,7 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask pground;
     [SerializeField] private LayerMask monster;
-    [SerializeField] private LayerMask buble;
+    [SerializeField] private LayerMask bubble;
 
     SpriteRenderer sr;
     Rigidbody2D rb;
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
         }
         rb.linearVelocity = new Vector2(dir.x * moveSpeed, rb.linearVelocity.y);
 
-        bool isGrounded = Physics2D.CircleCast(transform.position, 0.3f, Vector2.down, 0.5f, ground | pground | buble);
+        bool isGrounded = Physics2D.CircleCast(transform.position, 0.3f, Vector2.down, 0.5f, ground | pground | bubble);
 
         if (isGrounded && rb.linearVelocity.y <=0)
         {

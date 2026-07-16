@@ -19,14 +19,19 @@ public class BossHpBarUI : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        CloseSlider();
+    }
+
     public void OnSlider()
     {
-        gameObject.SetActive(true);
+        bossHpbar.gameObject.SetActive(true);
     }
 
     public void CloseSlider()
     {
-       gameObject.SetActive(false);
+        bossHpbar.gameObject.SetActive(false);
     }
 
     public void Setup(float maxHp)

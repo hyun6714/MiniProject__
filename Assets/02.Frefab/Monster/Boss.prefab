@@ -107,6 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossMonster
   mstate: 0
+  maxHp: 1000
+  currenHp: 0
+  bossHpbar: {fileID: 0}
 --- !u!50 &-1801181151906045398
 Rigidbody2D:
   serializedVersion: 5
