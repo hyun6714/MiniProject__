@@ -22,7 +22,7 @@ public class Monster : MonoBehaviour
     protected SpriteRenderer sr;
     protected Rigidbody2D rb;
     Vector3 targetP;
-    private void Awake()
+    protected virtual void Awake()
     {
         mstate = MonsterState.Move;
         sr = GetComponent<SpriteRenderer>();

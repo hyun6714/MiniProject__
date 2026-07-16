@@ -5,20 +5,26 @@ public enum BossMonState
     Move,Die
 }
 
-
 public class BossMonster : Monster
 {
-    int hp = 1000;
+    int maxHp = 1000;
+    int currenHp;
+
+    public BossHpBarUI bossHpbar;
     
     BossMonState Bstate;
 
-    int dmg = Bubble.attackDmg;
-
-    void Start()
+    protected override void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
+        currenHp = maxHp;
+        base.Awake();
+
+        if(bossHpbar != null)
+        {
+            bossHpbar.Setup(maxHp);
+        }
     }
+
 
     protected override void Move()
     {
@@ -38,19 +44,26 @@ public class BossMonster : Monster
 
     public void TakeDmg()
     {
-        hp -= dmg;
-        if(hp <=0)
+        int dmg = Bubble.attackDmg;
+
+        currenHp -= dmg;
+        if(currenHp <=0)
         {
-            Bstate = BossMonState.Die;
-            gameObject.SetActive(false);
+            currenHp = 0;
             Die();
+        }
+
+        if(bossHpbar != null)
+        {
+            bossHpbar.UpdateHpSlider(currenHp);
         }
     }
 
     void Die()
     {
+        Bstate = BossMonState.Die;
         GameManager.instance.GameClear();
-        //여기에서 죽는다면 필요한 것들 호출
+        gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
