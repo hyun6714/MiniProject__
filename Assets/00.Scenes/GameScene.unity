@@ -2184,7 +2184,7 @@ MonoBehaviour:
   - {fileID: 1476317420}
   - {fileID: 1070749799}
   - {fileID: 1154421856}
-  cStage: 4
+  cStage: 0
   backGrounA: {fileID: 1030067294}
   backGrounB: {fileID: 1389796064}
   backGrounC: {fileID: 1450613198}
@@ -2631,7 +2631,7 @@ MonoBehaviour:
     m_Bits: 1024
   bubble:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 524288
 --- !u!50 &882795189
 Rigidbody2D:
   serializedVersion: 5
@@ -3174,7 +3174,7 @@ RectTransform:
   m_Father: {fileID: 413277053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 12.549999, y: 0}
   m_SizeDelta: {x: 12.499999, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3754,7 +3754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1295894804
 RectTransform:
   m_ObjectHideFlags: 0
