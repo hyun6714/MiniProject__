@@ -29,6 +29,8 @@ public class StageManager : MonoBehaviour
     {
         BackGoundChage();
         SpawnStage(cStage);
+
+        SpawnBossMon();//체크용 삭제필요
     }
 
     public void SpawnBossMon()

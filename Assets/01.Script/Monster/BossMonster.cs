@@ -20,6 +20,7 @@ public class BossMonster : Monster
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     protected override void Move()

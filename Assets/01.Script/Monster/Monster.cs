@@ -19,16 +19,18 @@ public class Monster : MonoBehaviour
     float confinedTime;
     float timer;
 
-    SpriteRenderer sr;
-    Rigidbody2D rb;
+    protected SpriteRenderer sr;
+    protected Rigidbody2D rb;
     Vector3 targetP;
-    
-    void Start()
+    private void Awake()
     {
         mstate = MonsterState.Move;
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+    }
 
+    void Start()
+    {
         confinedTime = 5f;
         SetNewTarget();
     }
@@ -95,7 +97,6 @@ public class Monster : MonoBehaviour
         {
             return;
         }
-        mstate = MonsterState.Move;
         float direction = targetP.x - transform.position.x;
 
         SpriteDirection(direction);
