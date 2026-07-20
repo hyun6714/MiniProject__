@@ -47,6 +47,7 @@ public class StageManager : MonoBehaviour
     public void SpawnBossMon()
     {
         MonsterSpawn.instance.StopSpawning();
+        BossMonSpanw.instance.ResetSpawnCount();
         BossMonSpanw.instance.BossSpawn();
         BossHpBarUI.instance.OnSlider();
     }
