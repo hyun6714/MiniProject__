@@ -53,8 +53,6 @@ public class Monster : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("충돌" + collision.gameObject.name);
-
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bubble"))
         {
             Debug.Log("버블 충돌함");
@@ -91,7 +89,7 @@ public class Monster : MonoBehaviour
     protected virtual void SetNewTarget() 
     {
         randomX = Random.Range(-9f, 9f);
-        targetP = new Vector3(randomX, transform.position.y, 0);
+        targetP = new Vector3(randomX, transform.position.y+0.5f, 0);
     }
 
     protected virtual void Move()

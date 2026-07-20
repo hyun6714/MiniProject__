@@ -29,7 +29,7 @@ public class BossMonSpanw : MonoBehaviour
 
     public void BossSpawn()
     {
-        Debug.Log("소환 시도");
+        Debug.Log("보스 소환 시도");
         if(BossPrefab == null)
         {
             Debug.Log("Boss null");
@@ -37,8 +37,8 @@ public class BossMonSpanw : MonoBehaviour
 
         if(spawnCount<spawnMax)
         {
-            GameObject bossobj = Instantiate(BossPrefab, new Vector3(6, -4, 0), Quaternion.identity);
-            Debug.Log("소환완료");
+            GameObject bossobj = Instantiate(BossPrefab, new Vector3(6, -4.5f, 0), Quaternion.identity);
+            Debug.Log("보스 소환완료");
             spawnCount++;
 
             BossMonster bossSc = bossobj.GetComponent<BossMonster>();
@@ -52,7 +52,7 @@ public class BossMonSpanw : MonoBehaviour
         }
         else
         {
-            Debug.Log($"소환 실패 카운트 {spawnCount}");
+            Debug.Log($"보스 소환 실패 카운트 {spawnCount}");
         }
     }
 
