@@ -5,8 +5,8 @@ public class BossMonSpanw : MonoBehaviour
     public static BossMonSpanw instance;
     [SerializeField] private GameObject BossPrefab;
 
-    int SpawnCount;
-    int SpawnMax;
+    int spawnCount;
+    int spawnMax;
 
     private void Awake()
     {
@@ -18,33 +18,41 @@ public class BossMonSpanw : MonoBehaviour
         else
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
-    }
 
-    void Start()
-    {
-        SpawnCount = 0;
-        SpawnMax = 1;
+        spawnCount = 0;
+        spawnMax = 1;
     }
-
     public void ResetSpawnCount()
     {
-        SpawnCount=0;
+        spawnCount=0;
     }
 
     public void BossSpawn()
     {
-        if(SpawnCount<SpawnMax)
+        Debug.Log("소환 시도");
+        if(BossPrefab == null)
+        {
+            Debug.Log("Boss null");
+        }
+
+        if(spawnCount<spawnMax)
         {
             GameObject bossobj = Instantiate(BossPrefab, new Vector3(7, -4, 0), Quaternion.identity);
-            SpawnCount++;
+            Debug.Log("소환완료");
+            spawnCount++;
 
             BossMonster bossSc = bossobj.GetComponent<BossMonster>();
             if (bossSc != null)
             {
                 bossSc.bossHpbar = BossHpBarUI.instance;
-
                 bossSc.ResetBossHp();
+
+                BossHpBarUI.instance.OnSlider();
             }
+        }
+        else
+        {
+            Debug.Log($"소환 실패 카운트 {spawnCount}");
         }
     }
 

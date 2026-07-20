@@ -39,6 +39,7 @@ public class Bubble : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Ãæµ¹"+collision.gameObject.name);
         if (collision.gameObject.layer == LayerMask.NameToLayer("Monster"))
         {
             gameObject.SetActive(false);

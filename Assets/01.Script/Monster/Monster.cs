@@ -53,8 +53,11 @@ public class Monster : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("충돌" + collision.gameObject.name);
+
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bubble"))
         {
+            Debug.Log("구속");
             BubbleConfined();
             return;
         }

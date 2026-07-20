@@ -21,12 +21,20 @@ public class BossHpBarUI : MonoBehaviour
 
     private void Start()
     {
-        CloseSlider();
+        //CloseSlider();
     }
 
     public void OnSlider()
     {
-        bossHpbar.gameObject.SetActive(true);
+        Debug.Log("HPbar소환 시도");
+        if (bossHpbar != null)
+        {
+            bossHpbar.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("Hpbar null");
+        }
     }
 
     public void CloseSlider()
