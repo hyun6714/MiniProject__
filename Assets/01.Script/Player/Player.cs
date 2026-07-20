@@ -15,6 +15,8 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
     [SerializeField] private LayerMask monster;
     [SerializeField] private LayerMask bubble;
 
+    Animator anim;
+
     SpriteRenderer sr;
     Rigidbody2D rb;
 
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         moveSpeed = 3f;
 

@@ -11,6 +11,7 @@ public class BossMonster : Monster
     [SerializeField] private int currenHp;
     [SerializeField] GameObject bossAmmoPrefab;
 
+    Animator mAnim;
     public BossHpBarUI bossHpbar;
     
     BossMonState Bstate;
@@ -24,6 +25,12 @@ public class BossMonster : Monster
         {
             bossHpbar.Setup(maxHp);
         }
+    }
+
+    void Start()
+    {
+        mAnim = GetComponent<Animator>();
+        
     }
 
     protected override void Move()
