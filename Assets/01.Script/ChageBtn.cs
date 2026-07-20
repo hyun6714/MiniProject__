@@ -9,13 +9,12 @@ public class ChageBtn : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
-    public void ScnenGame() //다시 메인 넘어가고 다시 시작할시 안되는 버그 
+    public void ScnenGame()
     {
         SceneManager.LoadScene("GameScene");
         UIManager.instance.StageFClose();
         Time.timeScale = 1;
         GameManager.instance.ResetHeart();
-        //로비 같은 곳 만들기?
     }
 
     public void StageRe()

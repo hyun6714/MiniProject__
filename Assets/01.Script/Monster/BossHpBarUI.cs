@@ -19,11 +19,6 @@ public class BossHpBarUI : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        //CloseSlider();
-    }
-
     public void OnSlider()
     {
         Debug.Log("HPbar소환 시도");
