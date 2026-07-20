@@ -8,7 +8,6 @@ public class UIManager : MonoBehaviour
 
     int totalScore;
     int currentScore;
-    bool isScorePuls = false;
 
     [SerializeField] GameObject gameOverPop;
     [SerializeField] GameObject reStagePop;
@@ -55,14 +54,8 @@ public class UIManager : MonoBehaviour
 
     public void TotalScroe()
     {
-        if(isScorePuls)
-        {
-            return;
-        }
         totalScore += currentScore;
         totalScoreText.text = $"Total Score {totalScore}";
-
-        isScorePuls = true;
     }
 
     public void ReGameHeartPop()
