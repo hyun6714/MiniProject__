@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
     public void TotalScroe()
     {
         totalScore += currentScore;
-        totalScoreText.text = $"Total Score {totalScoreText}";
+        totalScoreText.text = $"Total Score {totalScore}";
     }
 
     public void ReGameHeartPop()

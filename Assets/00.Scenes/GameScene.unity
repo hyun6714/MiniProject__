@@ -2184,7 +2184,7 @@ MonoBehaviour:
   - {fileID: 1476317420}
   - {fileID: 1070749799}
   - {fileID: 1154421856}
-  cStage: 4
+  cStage: 0
   backGrounA: {fileID: 1030067294}
   backGrounB: {fileID: 1389796064}
   backGrounC: {fileID: 1450613198}
