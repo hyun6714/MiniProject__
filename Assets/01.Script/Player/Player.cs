@@ -8,7 +8,6 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
     float moveSpeed;
     float jumpPower;
     int jumpCount;
-    int jumpMax;
 
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask pground;
@@ -30,7 +29,6 @@ public class Player : MonoBehaviour //게임시작시 플레이어 위치 정하기
 
         jumpPower = 6f;
         jumpCount = 0;
-        jumpMax = 1;
     }
 
     private void Update()
