@@ -60,18 +60,18 @@ public class Monster : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            if(mstate == MonsterState.Confined)
-            {
-                MonDie();
-            }
-            else if(mstate == MonsterState.Move)
-            {
-                return;
-            }
+        //if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        //{
+        //    if(mstate == MonsterState.Confined)
+        //    {
+        //        MonDie();
+        //    }
+        //    else if(mstate == MonsterState.Move)
+        //    {
+        //        return;
+        //    }
 
-        }
+        //}
     }
 
     protected virtual void SpriteDirection(float direction)

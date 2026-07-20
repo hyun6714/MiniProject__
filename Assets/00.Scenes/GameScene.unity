@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gameState: 0
   timeLimit: 60
-  maxheart: 3
+  maxheart: 1
   heart: 0
   currentScore: 0
 --- !u!4 &467535331
@@ -2774,7 +2774,7 @@ Transform:
   m_GameObject: {fileID: 882795187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5, y: 0.65, z: 0}
+  m_LocalPosition: {x: -4.79, y: 7.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4500,13 +4500,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c95f770e6c1fec44a5a98b16f0689d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
-  scoreText: {fileID: 1442171257}
   gameOverPop: {fileID: 1352400394}
   reStagePop: {fileID: 333843555}
   hurryUpPop: {fileID: 736018057}
   clearPop: {fileID: 1318653521}
   heartReGamePopText: {fileID: 1622021272}
   totalScoreText: {fileID: 1350243188}
+  scoreText: {fileID: 1442171257}
 --- !u!4 &1389145737
 Transform:
   m_ObjectHideFlags: 0

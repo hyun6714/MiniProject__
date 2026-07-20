@@ -115,7 +115,6 @@ public class GameManager : MonoBehaviour
         if(allmon.Count(m => m.activeInHierarchy) == 0)
         {
             Debug.Log("체크 호출");
-            StageClear();
             StageManager.instance.StageClear();
         }
     }

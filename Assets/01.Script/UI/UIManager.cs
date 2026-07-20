@@ -52,8 +52,9 @@ public class UIManager : MonoBehaviour
         scoreText.text = $"Now Score {0}";
     }
 
-    public void TotalScroe()
+    public void TotalScroe() //ÇöÀç6000   tatal 12000 2¹è
     {
+        Debug.Log("ww");
         totalScore += currentScore;
         totalScoreText.text = $"Total Score {totalScore}";
     }

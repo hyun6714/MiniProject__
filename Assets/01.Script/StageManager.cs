@@ -21,7 +21,10 @@ public class StageManager : MonoBehaviour
         }
 
         else
+        {
+            Debug.Log("11");
             Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
     }
 
