@@ -6,9 +6,10 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [SerializeField] TextMeshProUGUI scoreText;
     int totalScore;
     int currentScore;
+    bool isScorePuls = false;
+
     [SerializeField] GameObject gameOverPop;
     [SerializeField] GameObject reStagePop;
     [SerializeField] GameObject hurryUpPop;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI heartReGamePopText;
     [SerializeField] TextMeshProUGUI totalScoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
 
     private void Awake()
     {
@@ -47,13 +49,20 @@ public class UIManager : MonoBehaviour
 
     public void ScoreRe()
     {
+        currentScore = 0;
         scoreText.text = $"Now Score {0}";
     }
 
     public void TotalScroe()
     {
+        if(isScorePuls)
+        {
+            return;
+        }
         totalScore += currentScore;
         totalScoreText.text = $"Total Score {totalScore}";
+
+        isScorePuls = true;
     }
 
     public void ReGameHeartPop()
