@@ -37,7 +37,7 @@ public class BossMonSpanw : MonoBehaviour
 
         if(spawnCount<spawnMax)
         {
-            GameObject bossobj = Instantiate(BossPrefab, new Vector3(7, -4, 0), Quaternion.identity);
+            GameObject bossobj = Instantiate(BossPrefab, new Vector3(6, -4, 0), Quaternion.identity);
             Debug.Log("소환완료");
             spawnCount++;
 
