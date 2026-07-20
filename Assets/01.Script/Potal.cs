@@ -7,6 +7,8 @@ public class Potal : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             StageManager.instance.NextStage();
+
+            PotalManager.instance.ClosePotal();
         }
     }
 }

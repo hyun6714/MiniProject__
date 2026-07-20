@@ -30,4 +30,11 @@ public class PotalManager : MonoBehaviour
         }
     }
 
+    public void ClosePotal()
+    {
+        if (currentPortal != null)
+        {
+            currentPortal.SetActive(false);
+        }
+    }
 }
