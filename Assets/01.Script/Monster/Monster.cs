@@ -57,7 +57,7 @@ public class Monster : MonoBehaviour
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bubble"))
         {
-            Debug.Log("구속");
+            Debug.Log("버블 충돌함");
             BubbleConfined();
             return;
         }
