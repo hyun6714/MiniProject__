@@ -9,13 +9,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     int totalScore;
     int currentScore;
-    [SerializeField] private GameObject gameOverPop;
-    [SerializeField] private GameObject reStagePop;
-    [SerializeField] private GameObject hurryUpPop;
-    [SerializeField] private GameObject clearPop;
+    [SerializeField] GameObject gameOverPop;
+    [SerializeField] GameObject reStagePop;
+    [SerializeField] GameObject hurryUpPop;
+    [SerializeField] GameObject clearPop;
 
-    [SerializeField] private TextMeshProUGUI heartReGamePopText;
-    [SerializeField] private TextMeshProUGUI totalScoreText;
+    [SerializeField] TextMeshProUGUI heartReGamePopText;
+    [SerializeField] TextMeshProUGUI totalScoreText;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
+    void Start()
     {
         int hearts = GameManager.instance.heart;
         heartReGamePopText.text = $" ¢¾  x {hearts}";
