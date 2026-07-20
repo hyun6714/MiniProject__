@@ -25,7 +25,7 @@ public class StageManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
+    void Start()
     {
         BackGoundChage();
         SpawnStage(cStage);
@@ -88,8 +88,15 @@ public class StageManager : MonoBehaviour
             ItemSpawner.instance.SpawnItem();
             GameManager.instance.ResetTimer();
 
-            SpawnBossMon();
-            MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
+
+            if(cStage != 4)
+            {
+                MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
+            }
+            else
+            {
+                SpawnBossMon();
+            }
         }
     }
 
