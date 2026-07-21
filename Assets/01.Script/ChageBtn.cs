@@ -16,14 +16,14 @@ public class ChageBtn : MonoBehaviour
         GameManager.instance.ResetHeart();
     }
 
-    public void StageRe()
+    public void StageReGame()
     {
         StageManager.instance.ReStage();
     }
 }
 
-//1. 보스몬스터 공격 패턴 생성 
-//2. 토탈 스코어 두배로 적용되는 버그(완료) + 스테이지 넘어갈 때 아이템 비활성화 및 현재 점수 초기화 
+//1. 보스몬스터 공격 패턴 생성 //이건 고민중 만들까 말까 
+//2. 토탈 스코어 두배로 적용되는 버그(완료) + 스테이지 넘어갈 때 아이템 비활성화 및 현재 점수 초기화 (완료)
 
 //만들어야 하는 것들
 //플레이어 애니매이션 제작및 적용 //이거 하는중 + 기초틀은 잡음 & 일반 몬스터 구속상태 애니매이션 만들기
