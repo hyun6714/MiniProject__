@@ -73,4 +73,13 @@ public class ItemSpawner : MonoBehaviour
         itemTotal = 0;
         limitTime = 60f;
     }
+
+    public void ClearItem()
+    {
+        ItemScore[] itemInScene = FindObjectsByType<ItemScore>(FindObjectsSortMode.None);
+        foreach (ItemScore item in itemInScene)
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
 }

@@ -80,6 +80,9 @@ public class StageManager : MonoBehaviour
         cStage++;
         if (cStage < stagePrefabs.Length)
         {
+            ItemSpawner.instance.ClearItem();
+            UIManager.instance.ScoreRe();
+
             BackGoundChage();
             SpawnStage(cStage);
 

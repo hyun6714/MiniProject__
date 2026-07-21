@@ -48,9 +48,8 @@ public class UIManager : MonoBehaviour
         scoreText.text = $"Now Score {0}";
     }
 
-    public void TotalScroe() //현재6000   tatal 12000 2배
+    public void TotalScroe()
     {
-        Debug.Log("ww");
         totalScore += currentScore;
         totalScoreText.text = $"Total Score {totalScore}";
     }
@@ -66,6 +65,14 @@ public class UIManager : MonoBehaviour
         if(clearPop != null)
         {
             clearPop.SetActive(true);
+        }
+    }
+
+    public void GameClearPopClose()
+    {
+        if(clearPop != null)
+        {
+            clearPop.SetActive(false);
         }
     }
 
@@ -115,5 +122,12 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         hurryUpPop.SetActive(false);
+    }
+
+    public void UICloseAllPop() //게임시작 함수를 만들고 거기에 넣기 + 메인씬으로 가기전에 다 꺼버리기 
+    {
+        StageFClose();
+        GameOverPopClose();
+        GameClearPopClose();
     }
 }
