@@ -97,10 +97,9 @@ public class Player : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 jumpCount = 1;
 
-                bool isJump = (rb.linearVelocity.y != 0.1f);
                 if (anim != null)
                 {
-                    anim.SetBool("IsJump", isJump);
+                    anim.SetBool("IsJump", true);
                 }
             }
         }
