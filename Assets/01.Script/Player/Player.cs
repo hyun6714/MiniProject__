@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
 
             if(anim != null)
             {
-                anim.SetBool("isJump",false);
+                anim.SetBool("IsJump",false);
             }
         }
     }
