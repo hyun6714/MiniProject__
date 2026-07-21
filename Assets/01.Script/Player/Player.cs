@@ -52,6 +52,12 @@ public class Player : MonoBehaviour
         }
         rb.linearVelocity = new Vector2(dir.x * moveSpeed, rb.linearVelocity.y);
 
+        bool isMove = (dir.x != 0);
+        if(anim != null)
+        {
+            anim.SetBool("IsMove",isMove);
+        }
+
         bool isGrounded = Physics2D.CircleCast(transform.position, 0.3f, Vector2.down, 0.5f, ground | pground | bubble);
 
         if (isGrounded && rb.linearVelocity.y <=0)
@@ -85,6 +91,12 @@ public class Player : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 jumpCount = 1;
+
+                bool isJump = (rb.linearVelocity.y != 0.1f);
+                if (anim != null)
+                {
+                    anim.SetBool("IsJump", isJump);
+                }
             }
         }
     }
