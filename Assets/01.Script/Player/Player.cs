@@ -63,6 +63,11 @@ public class Player : MonoBehaviour
         if (isGrounded && rb.linearVelocity.y <=0)
         {
             JumpReset();
+
+            if(anim != null)
+            {
+                anim.SetBool("isJump",false);
+            }
         }
     }
 
