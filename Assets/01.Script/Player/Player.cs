@@ -39,8 +39,9 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         dir = Vector2.zero;
+        bool isGrounded = Physics2D.CircleCast(transform.position, 0.3f, Vector2.down, 0.5f, ground | pground | bubble);
 
-        if(Keyboard.current.aKey.isPressed)
+        if (Keyboard.current.aKey.isPressed)
         {
             dir += Vector2.left;
             sr.flipX = true;
@@ -52,13 +53,11 @@ public class Player : MonoBehaviour
         }
         rb.linearVelocity = new Vector2(dir.x * moveSpeed, rb.linearVelocity.y);
 
-        bool isMove = (dir.x != 0);
+        bool isMove = (dir.x != 0 && isGrounded);
         if(anim != null)
         {
             anim.SetBool("IsMove",isMove);
         }
-
-        bool isGrounded = Physics2D.CircleCast(transform.position, 0.3f, Vector2.down, 0.5f, ground | pground | bubble);
 
         if (isGrounded && rb.linearVelocity.y <=0)
         {
