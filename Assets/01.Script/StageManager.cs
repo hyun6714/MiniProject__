@@ -115,6 +115,7 @@ public class StageManager : MonoBehaviour
         SpawnStage(cStage);
         Time.timeScale = 1;
 
+        TImeUI.instance.ResetTimer();
         UIManager.instance.StageFClose();
         GameManager.instance.ResetTimer();
         ItemSpawner.instance.SpawnItem();
