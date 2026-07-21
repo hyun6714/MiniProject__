@@ -24,11 +24,7 @@ public class MonsterSpawn : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-
-        else
-            Destroy(gameObject);
     }
 
     void Start()

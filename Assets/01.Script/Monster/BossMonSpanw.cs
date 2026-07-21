@@ -14,11 +14,6 @@ public class BossMonSpanw : MonoBehaviour
         {
             instance = this;
         }
-
-        else
-            Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
-
         spawnCount = 0;
         spawnMax = 1;
     }

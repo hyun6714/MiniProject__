@@ -11,10 +11,6 @@ public class PotalManager : MonoBehaviour
         {
             instance = this;
         }
-
-        else
-            Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
     }
 
     public void SpawnPotal(Vector3 position)

@@ -24,10 +24,6 @@ public class UIManager : MonoBehaviour
         {
             instance = this;
         }
-
-        else
-            Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()

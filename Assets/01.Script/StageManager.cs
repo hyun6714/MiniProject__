@@ -19,13 +19,6 @@ public class StageManager : MonoBehaviour
         {
             instance = this;
         }
-
-        else
-        {
-            Debug.Log("11");
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
