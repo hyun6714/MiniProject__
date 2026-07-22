@@ -19,8 +19,9 @@ public class Monster : MonoBehaviour
     float confinedTime;
     float timer;
 
-    protected float dir;
+    Animator mAnim;
 
+    protected float dir;
     protected SpriteRenderer sr;
     protected Rigidbody2D rb;
     Vector3 targetP;
@@ -33,6 +34,7 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
+        mAnim = GetComponent<Animator>();
         confinedTime = 5f;
         SetNewTarget();
     }
@@ -61,19 +63,6 @@ public class Monster : MonoBehaviour
             BubbleConfined();
             return;
         }
-
-        //if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
-        //{
-        //    if(mstate == MonsterState.Confined)
-        //    {
-        //        MonDie();
-        //    }
-        //    else if(mstate == MonsterState.Move)
-        //    {
-        //        return;
-        //    }
-
-        //}
     }
 
     protected virtual void SpriteDirection(float direction)
