@@ -10,21 +10,20 @@ public class Monster : MonoBehaviour
 
     public MonsterState mstate;
 
-    float score;
     float randomX;
-    float randomY;
-
     public static int currentMonCount = 5;
 
     float confinedTime;
     float timer;
 
+    bool isConfined;
     Animator mAnim;
 
     protected float dir;
     protected SpriteRenderer sr;
     protected Rigidbody2D rb;
     Vector3 targetP;
+
     protected virtual void Awake()
     {
         mstate = MonsterState.Move;
@@ -105,8 +104,12 @@ public class Monster : MonoBehaviour
     {
         mstate = MonsterState.Confined;
         Debug.Log("구속");
+        isConfined = true;
+        if (mAnim != null)
+        {
+            mAnim.SetBool("IsConfined", isConfined);
+        }
         timer = 0;
-        //구속상태 애니메이션 추가 
     }
 
     public void BubbleRelease()
@@ -114,6 +117,11 @@ public class Monster : MonoBehaviour
         if(confinedTime <= timer)
         {
             mstate = MonsterState.Move;
+            isConfined = false;
+            if(mAnim != null)
+            {
+                mAnim.SetBool("IsConfined",isConfined);
+            }
 
             SetNewTarget();
             Move();
