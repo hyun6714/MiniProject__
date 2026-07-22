@@ -12,7 +12,7 @@ public class BossMonster : Monster
     [SerializeField] GameObject bossAmmoPrefab;
 
     float lastX;
-    Animator mAnim;
+    Animator bossMonAnim;
     public BossHpBarUI bossHpbar;
     
     BossMonState Bstate;
@@ -30,7 +30,7 @@ public class BossMonster : Monster
 
     void Start()
     {
-        mAnim = GetComponent<Animator>();
+        bossMonAnim = GetComponent<Animator>();
         
     }
 
@@ -40,9 +40,9 @@ public class BossMonster : Monster
         base.Move();
 
         bool isMove = (Mathf.Abs(transform.position.x - lastX) > 0.001f);
-        if (mAnim != null)
+        if (bossMonAnim != null)
         {
-            mAnim.SetBool("IsMove", isMove);
+            bossMonAnim.SetBool("IsMove", isMove);
         }
 
         lastX = transform.position.x;
