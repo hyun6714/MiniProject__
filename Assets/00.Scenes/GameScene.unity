@@ -2184,7 +2184,7 @@ MonoBehaviour:
   - {fileID: 1476317420}
   - {fileID: 1070749799}
   - {fileID: 1154421856}
-  cStage: 0
+  cStage: 4
   backGrounA: {fileID: 1030067294}
   backGrounB: {fileID: 1389796064}
   backGrounC: {fileID: 1450613198}
@@ -2774,7 +2774,7 @@ Transform:
   m_GameObject: {fileID: 882795187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.02, y: 4.81, z: 0}
+  m_LocalPosition: {x: -0.77, y: 11.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -19,6 +19,8 @@ public class Monster : MonoBehaviour
     float confinedTime;
     float timer;
 
+    protected float dir;
+
     protected SpriteRenderer sr;
     protected Rigidbody2D rb;
     Vector3 targetP;
@@ -98,12 +100,13 @@ public class Monster : MonoBehaviour
         {
             return;
         }
-        float direction = targetP.x - transform.position.x;
 
-        SpriteDirection(direction);
+        dir = targetP.x - transform.position.x;
 
-        rb.linearVelocity = new Vector2(Mathf.Sign(direction) * GameManager.monSpeed, rb.linearVelocity.y);
-        if(Mathf.Abs(direction) < 0.1f)
+        SpriteDirection(dir);
+
+        rb.linearVelocity = new Vector2(Mathf.Sign(dir) * GameManager.monSpeed, rb.linearVelocity.y);
+        if(Mathf.Abs(dir) < 0.1f)
         {
             SetNewTarget();
         }

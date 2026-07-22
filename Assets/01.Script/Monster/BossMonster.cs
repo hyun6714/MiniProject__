@@ -11,6 +11,7 @@ public class BossMonster : Monster
     [SerializeField] private int currenHp;
     [SerializeField] GameObject bossAmmoPrefab;
 
+    float lastX;
     Animator mAnim;
     public BossHpBarUI bossHpbar;
     
@@ -37,6 +38,14 @@ public class BossMonster : Monster
     {
         Bstate = BossMonState.Move;
         base.Move();
+
+        bool isMove = (Mathf.Abs(transform.position.x - lastX) > 0.001f);
+        if (mAnim != null)
+        {
+            mAnim.SetBool("IsMove", isMove);
+        }
+
+        lastX = transform.position.x;
     }
 
     protected override void SetNewTarget()
