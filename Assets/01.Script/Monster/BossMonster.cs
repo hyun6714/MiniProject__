@@ -10,6 +10,13 @@ public class BossMonster : Monster
     [SerializeField] private int maxHp = 1000;
     [SerializeField] private int currenHp;
     [SerializeField] GameObject bossAmmoPrefab;
+    [SerializeField] GameObject bossButtle;
+
+    float attackTimer;
+    float timeMax = 10f;
+
+    int bulletCount = 5;
+    float spacing = 1f;
 
     float lastX;
     Animator bossMonAnim;
@@ -32,6 +39,15 @@ public class BossMonster : Monster
     {
         bossMonAnim = GetComponent<Animator>();
         
+    }
+
+    void Update()
+    {
+        attackTimer += Time.deltaTime;
+        if(attackTimer > timeMax)
+        {
+            Attack();
+        }
     }
 
     protected override void Move()
@@ -91,6 +107,23 @@ public class BossMonster : Monster
             bossHpbar.OnSlider();
         }
         bossHpbar.gameObject.SetActive(true);
+    }
+
+    public void Attack()
+    {
+        Vector3 bossPos = transform.position;
+        Quaternion bossRot = transform.rotation;
+
+        attackTimer = 0f;
+        for (int i = 0; i < bulletCount; i++)
+        {
+            float offset = i - (bulletCount / 2);
+            Vector3 localOffset = new Vector3(offset * spacing, 0, 0);
+            Vector3 rotatedOffset = bossRot * localOffset;
+            Vector3 spawnPos = bossPos + rotatedOffset;
+
+            Instantiate(bossButtle, spawnPos, bossRot);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
