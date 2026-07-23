@@ -111,6 +111,7 @@ MonoBehaviour:
   maxHp: 1000
   currenHp: 0
   bossAmmoPrefab: {fileID: 0}
+  bossButtle: {fileID: 5153705567249291468, guid: 64b02262a081c09449350ac61713fb48, type: 3}
   bossHpbar: {fileID: 0}
 --- !u!50 &-1801181151906045398
 Rigidbody2D:

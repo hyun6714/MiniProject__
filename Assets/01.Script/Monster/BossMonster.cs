@@ -44,9 +44,15 @@ public class BossMonster : Monster
     void Update()
     {
         attackTimer += Time.deltaTime;
-        if(attackTimer > timeMax)
+        if (attackTimer > timeMax)
         {
             Attack();
+        }
+
+        if (Bstate != BossMonState.Die)
+        {
+            mstate = MonsterState.Move;
+            Move();
         }
     }
 
