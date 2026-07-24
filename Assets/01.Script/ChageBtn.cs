@@ -13,7 +13,6 @@ public class ChageBtn : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
         Time.timeScale = 1;
-        GameManager.instance.ResetHeart();
     }
 
     public void StageReGame()

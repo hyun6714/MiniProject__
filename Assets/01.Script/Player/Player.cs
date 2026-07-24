@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
         moveSpeed = 3f;
 
-        jumpPower = 6f;
+        jumpPower = 6.5f;
         jumpCount = 0;
     }
 

@@ -36,6 +36,7 @@ public class StageManager : MonoBehaviour
         }
         else
         {
+            GameManager.instance.ResetHeart();
             MonsterSpawn.instance.SpawnMon();
             BossHpBarUI.instance.CloseSlider();
         }
