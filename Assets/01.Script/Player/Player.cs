@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
         jumpPower = 6.5f;
         jumpCount = 0;
+        transform.position += new Vector3(0f, 0.5f, 0f);
     }
 
     private void Update()
@@ -100,6 +101,8 @@ public class Player : MonoBehaviour
                 {
                     anim.SetBool("IsJump", true);
                 }
+
+                transform.position += new Vector3(0f, 0.5f, 0f);
             }
         }
     }

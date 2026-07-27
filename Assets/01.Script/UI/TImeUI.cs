@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class TImeUI : MonoBehaviour
 {
     public static TImeUI instance;
-    public Image timerImage;
-    public float timeLimit = 60f;
-    private float timer;
+    [SerializeField] private Image timerImage;
+    float timeLimit = 60f;
+    float timer;
 
     private void Awake()
     {
