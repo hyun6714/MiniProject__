@@ -109,6 +109,7 @@ public class Monster : MonoBehaviour
         {
             mAnim.SetBool("IsConfined", isConfined);
         }
+        rb.linearVelocity = Vector2.zero;
         timer = 0;
     }
 
