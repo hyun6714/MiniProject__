@@ -101,8 +101,10 @@ public class GameManager : MonoBehaviour
     public void StageClear()
     {
         gameState = GameState.StageClear;
-        UIManager.instance.TotalScroe();
         MonsterSpawn.instance.StopSpawning();
+        UIManager.instance.TotalScroe();
+        ItemSpawner.instance.ClearItem();
+        ItemSpawner.instance.ItemSpawnStop();
     }
 
     public void CheckClear()

@@ -32,6 +32,5 @@ public class PotalManager : MonoBehaviour
         {
             currentPortal.SetActive(false);
         }
-
     }
 }
