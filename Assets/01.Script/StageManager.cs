@@ -82,7 +82,6 @@ public class StageManager : MonoBehaviour
         if (cStage < stagePrefabs.Length)
         {
             TImeUI.instance.ResetTimer();
-            ItemSpawner.instance.ClearItem();
             UIManager.instance.ScoreRe();
             
             BackGoundChage();
