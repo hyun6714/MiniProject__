@@ -90,9 +90,9 @@ public class StageManager : MonoBehaviour
 
             ItemSpawner.instance.SpawnItem();
             GameManager.instance.ResetTimer();
+            BubbleManager.instance.BubleDel();
 
-
-            if(cStage != 4)
+            if (cStage != 4)
             {
                 MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
             }
@@ -120,8 +120,9 @@ public class StageManager : MonoBehaviour
         UIManager.instance.StageFClose();
         GameManager.instance.ResetTimer();
         ItemSpawner.instance.SpawnItem();
+        BubbleManager.instance.BubleDel();
 
-        if(cStage != 4)
+        if (cStage != 4)
         {
             MonsterSpawn.instance.InvokeRepeating("SummonEnemy", 1f, 1f);
         }

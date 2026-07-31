@@ -22,7 +22,8 @@ public class SoundManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        float savedVolume = PlayerPrefs.GetFloat("BGMVolume", 1.0f);
+        PlayerPrefs.DeleteAll();
+        float savedVolume = PlayerPrefs.GetFloat("BGMVolume", 0.5f);
         SetBgmVolume(savedVolume);
     }
 

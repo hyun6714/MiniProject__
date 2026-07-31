@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         heart--;
         ResetScore();
 
+        BubbleManager.instance.BubleDel();
         MonsterSpawn.instance.StopSpawning();
         ItemSpawner.instance.ItemSpawnStop();
         UIManager.instance.StageF(); 

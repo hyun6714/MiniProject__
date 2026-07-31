@@ -8,6 +8,16 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] private int poolSize;
     SpriteRenderer targetsr;
 
+    public static BubbleManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     void Start()
     {
         if(target != null)
@@ -43,6 +53,22 @@ public class BubbleManager : MonoBehaviour
                     bubblePool[i].SetActive(true);
                     break;
                 }
+            }
+        }
+    }
+
+    public void BubleDel()
+    {
+        if (bubblePool == null) 
+        {
+            return;
+        }
+
+        for(int i=0; i< bubblePool.Length; i++)
+        {
+            if (bubblePool[i] != null && bubblePool[i].activeSelf)
+            {
+                bubblePool[i].SetActive(false);
             }
         }
     }
